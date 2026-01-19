@@ -1,200 +1,364 @@
 <!DOCTYPE HTML>
+<!--
+  One-page academic personal site
+  Sections: Home / News / Publications / Selected Projects / A little more
+  Base: works with HTML5 UP Miniport assets if you keep assets/css/main.css and assets/js/*
+-->
 <html>
-	<head>
-		<title>Rhoda Jiang — a small personal world</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <head>
+    <title>Rhoda Jiang</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Rhoda Jiang — academic profile, news, publications, and selected projects." />
 
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/world.css" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Your custom styling (Degas-inspired accent, restrained) -->
+    <link rel="stylesheet" href="assets/css/world.css" />
 
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+    <!-- Fonts (title: humanistic but restrained; body: readable + warm) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
 
-	<body class="is-preload">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="container">
-				<li><a href="#top">Home</a></li>
-				<li><a href="#posters">Posters</a></li>
-				<li><a href="#video">Video</a></li>
-				<li><a href="#book">Picture Book</a></li>
-				<li><a href="#photo">Photography</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
+    <!-- A few tiny layout helpers (optional). Keep minimal. -->
+    <style>
+      :root { --content: 62ch; }
+      /* If your world.css sets fonts, you can remove these. */
+      body, input, textarea, select { font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+      h1, h2, h3 { font-family: Spectral, Georgia, "Times New Roman", serif; }
 
-		<!-- Home -->
-		<article id="top" class="wrapper style1">
-			<div class="container">
-				<div class="row">
-					<div class="col-4 col-5-large col-12-medium">
-						<span class="image fit" style="border-radius:22px; overflow:hidden; border:1px solid rgba(35,31,26,.14);">
-							<img src="images/1_photo.png" alt="Rhoda" />
-						</span>
-					</div>
+      .measure { max-width: var(--content); }
+      .center { margin-left: auto; margin-right: auto; }
+      .quiet { opacity: .85; }
+      .kicker { letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; }
+      .stack > * + * { margin-top: 1rem; }
 
-					<div class="col-8 col-7-large col-12-medium">
-						<header>
-							<h1>Hi, I’m <strong>Rhoda Jiang</strong>.</h1>
-						</header>
+      /* Clean list layout for News/Publications */
+      .list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      .list li {
+        padding: .9rem 0;
+        border-top: 1px solid rgba(0,0,0,.10);
+      }
+      .list li:first-child { border-top: 0; }
 
-						<p style="max-width: 56ch;">
-							This is my small personal world — a place for posters, moving images,
-							picture-book notes, and photography.
-						</p>
+      .row2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      @media (max-width: 736px) {
+        .row2 { grid-template-columns: 1fr; }
+      }
 
-						<p style="max-width: 56ch;">
-							(For now, the rooms are simple — we’ll keep it calm and let the works speak.)
-						</p>
+      /* Small tag pills (use accent color in world.css ideally) */
+      .pill {
+        display: inline-block;
+        padding: .22rem .6rem;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,.12);
+        font-size: .82rem;
+        margin-right: .35rem;
+        margin-top: .35rem;
+      }
 
-						<ul class="actions">
-							<li><a href="#posters" class="button primary">Enter</a></li>
-							<li><a href="Rhoda_Jiang_CV_2024v.pdf" class="button">Download CV</a></li>
-						</ul>
+      /* If you want a small, calm portrait */
+      .portrait {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,.12);
+      }
+    </style>
+  </head>
 
-						<div class="room-grid">
-							<a href="#posters" class="card">
-								<div class="room-title"><h3 style="margin:0;">Posters</h3><span>exhibition wall</span></div>
-								<p style="margin:0;">Four posters, shown like a small gallery.</p>
-							</a>
-							<a href="#video" class="card">
-								<div class="room-title"><h3 style="margin:0;">Video</h3><span>main screen</span></div>
-								<p style="margin:0;">Competition piece on a dedicated stage.</p>
-							</a>
-							<a href="#book" class="card">
-								<div class="room-title"><h3 style="margin:0;">Picture Book</h3><span>flip through</span></div>
-								<p style="margin:0;">Sketches & story fragments (coming in the next round).</p>
-							</a>
-							<a href="#photo" class="card">
-								<div class="room-title"><h3 style="margin:0;">Photography</h3><span>quiet corridor</span></div>
-								<p style="margin:0;">Series / studies (coming in the next round).</p>
-							</a>
-						</div>
+  <body class="is-preload">
 
-					</div>
-				</div>
-			</div>
-		</article>
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="container">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Selected Projects</a></li>
+        <li><a href="#more">A little more</a></li>
+      </ul>
+    </nav>
 
-		<!-- Posters -->
-		<article id="posters" class="wrapper style2">
-			<div class="container">
-				<header>
-					<h2>Posters</h2>
-					<p>A small wall — click to view larger.</p>
-				</header>
+    <!-- HOME -->
+    <article id="top" class="wrapper style1">
+      <div class="container">
+        <div class="row">
+          <!-- Left: image (optional) -->
+          <div class="col-4 col-5-large col-12-medium">
+            <!-- Replace this with your own image path (or remove this entire column if you want pure-text like Sarah) -->
+            <span class="image fit portrait">
+              <img src="images/1_photo.png" alt="Rhoda Jiang" />
+            </span>
+          </div>
 
-				<div class="gallery">
-					<a href="images/posters/poster-01.jpg"><img src="images/posters/poster-01.jpg" alt="Poster 01"></a>
-					<a href="images/posters/poster-02.jpg"><img src="images/posters/poster-02.jpg" alt="Poster 02"></a>
-					<a href="images/posters/poster-03.jpg"><img src="images/posters/poster-03.jpg" alt="Poster 03"></a>
-					<a href="images/posters/poster-04.jpg"><img src="images/posters/poster-04.jpg" alt="Poster 04"></a>
-				</div>
+          <!-- Right: intro -->
+          <div class="col-8 col-7-large col-12-medium">
+            <header class="stack">
+              <div class="kicker quiet">Academic profile</div>
+              <h1 style="margin:0;">Rhoda Jiang</h1>
+              <p class="measure quiet" style="margin:0;">
+                I am a <strong>PhD student</strong> in the School of Social and Political Science at the University of Edinburgh.
+                My work sits at the intersection of <em>[your keywords]</em>.
+              </p>
+            </header>
 
-				<p style="margin-top: 1rem; color: rgba(35,31,26,.65);">
-					Tip: put your 4 poster files under <code>images/posters/</code> with the names above.
-				</p>
-			</div>
-		</article>
+            <div class="stack" style="margin-top: 1.2rem;">
+              <p class="measure quiet">
+                This page is intentionally simple: news, publications, a few selected projects, and a little more—just enough to show
+                my academic work and a quiet trace of my aesthetic sensibility.
+              </p>
 
-		<!-- Video -->
-		<article id="video" class="wrapper style3">
-			<div class="container">
-				<header>
-					<h2>Video</h2>
-					<p>Competition piece — displayed as a “main screen”.</p>
-				</header>
+              <div>
+                <span class="pill">[Research area 1]</span>
+                <span class="pill">[Research area 2]</span>
+                <span class="pill">[Method / theme]</span>
+              </div>
 
-				<div class="video-wrap">
-					<iframe
-						src="https://www.youtube-nocookie.com/embed/xaQxdUANO8k"
-						title="Competition Video"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
-				</div>
+              <ul class="actions" style="margin-top: .9rem;">
+                <li><a class="button primary" href="#publications">Browse publications</a></li>
+                <li><a class="button" href="Rhoda_Jiang_CV_2024v.pdf">Download CV</a></li>
+              </ul>
 
-				<div class="card" style="max-width: 980px; margin: 14px auto 0;">
-					<h3 style="margin:0 0 .35rem 0;">About this piece</h3>
-					<p style="margin:0;">
-						(Next: you send me 1–2 lines about the theme + your role, I’ll write a better “label card” here.)
-					</p>
-				</div>
-			</div>
-		</article>
+              <p class="measure" style="margin-top:.8rem;">
+                <strong>Email:</strong> <a href="mailto:R.Jiang-21@sms.ed.ac.uk">R.Jiang-21@sms.ed.ac.uk</a>
+                &nbsp;·&nbsp;
+                <strong>Website:</strong> <a href="https://rhodajiang.github.io/">rhodajiang.github.io</a>
+                <!-- Add these only if you have them; otherwise keep it clean
+                &nbsp;·&nbsp; <a href="[Google Scholar link]">Google Scholar</a>
+                &nbsp;·&nbsp; <a href="[ORCID link]">ORCID</a>
+                -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
 
-		<!-- Picture Book -->
-		<article id="book" class="wrapper style2">
-			<div class="container">
-				<header>
-					<h2>Picture Book</h2>
-					<p>Sketches, drafts, and story fragments — we’ll build a “flip-through” view next.</p>
-				</header>
+    <!-- NEWS -->
+    <article id="news" class="wrapper style2">
+      <div class="container">
+        <header class="stack">
+          <h2 style="margin:0;">News</h2>
+          <p class="measure quiet center" style="margin-top:.35rem;">
+            Short updates—enough to show what’s currently happening.
+          </p>
+        </header>
 
-				<div class="room-grid">
-					<a class="card" href="#contact">
-						<div class="room-title"><h3 style="margin:0;">Sketchbook</h3><span>coming soon</span></div>
-						<p style="margin:0;">A calm vertical reading experience.</p>
-					</a>
-					<a class="card" href="#contact">
-						<div class="room-title"><h3 style="margin:0;">Picture Book Project</h3><span>coming soon</span></div>
-						<p style="margin:0;">A project page with pages in order.</p>
-					</a>
-				</div>
-			</div>
-		</article>
+        <div class="center measure" style="margin-top: 1rem;">
+          <ul class="list">
+            <li>
+              <div class="quiet"><strong>2026</strong> · <span>[Month]</span></div>
+              <div>Presented at <em>[Conference / Workshop Name]</em>, <span class="quiet">[location]</span>.</div>
+            </li>
+            <li>
+              <div class="quiet"><strong>2025</strong> · <span>[Month]</span></div>
+              <div>Paper accepted: <em>[Title]</em>, <span class="quiet">[venue]</span>.</div>
+            </li>
+            <li>
+              <div class="quiet"><strong>2025</strong> · <span>[Month]</span></div>
+              <div>Started a project on <em>[topic]</em>.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
 
-		<!-- Photography -->
-		<article id="photo" class="wrapper style3">
-			<div class="container">
-				<header>
-					<h2>Photography</h2>
-					<p>A quiet corridor — we can do series or a grid (next round).</p>
-				</header>
+    <!-- PUBLICATIONS -->
+    <article id="publications" class="wrapper style3">
+      <div class="container">
+        <header class="stack">
+          <h2 style="margin:0;">Publications</h2>
+          <p class="measure quiet center" style="margin-top:.35rem;">
+            Selected publications and writing. (Add DOI / PDF links where possible.)
+          </p>
+        </header>
 
-				<div class="card" style="max-width: 980px; margin: 0 auto;">
-					<p style="margin:0;">
-						When you’re ready, drop 6–12 photos (or 1–2 series). I’ll turn this into a gallery layout.
-					</p>
-				</div>
-			</div>
-		</article>
+        <div class="center measure" style="margin-top: 1rem;">
+          <ul class="list">
+            <li>
+              <div><strong>Jiang, R.</strong> (2025). <em>[Paper title]</em>. <span class="quiet">[Journal/Conference]</span>.</div>
+              <div class="quiet">
+                <a href="[PDF link]">PDF</a> · <a href="[DOI link]">DOI</a>
+              </div>
+            </li>
+            <li>
+              <div><strong>Jiang, R.</strong> &amp; [Coauthor] (2024). <em>[Paper title]</em>. <span class="quiet">[Venue]</span>.</div>
+              <div class="quiet">
+                <a href="[PDF link]">PDF</a> · <a href="[DOI link]">DOI</a>
+              </div>
+            </li>
+            <li>
+              <div><strong>Jiang, R.</strong> (2023). <em>[Working paper / thesis chapter / report]</em>.</div>
+              <div class="quiet">
+                <a href="[Link]">Link</a>
+              </div>
+            </li>
+          </ul>
 
-		<!-- Contact -->
-		<article id="contact" class="wrapper style4">
-			<div class="container medium">
-				<header>
-					<h2>Contact</h2>
-					<p>Leave a note / say hi.</p>
-				</header>
+          <p class="quiet" style="margin-top:1rem;">
+            If you prefer: you can keep this list very short (3–6 items) and link to a full list on your CV.
+          </p>
+        </div>
+      </div>
+    </article>
 
-				<div class="card" style="text-align:left;">
-					<p style="margin:0 0 .5rem 0;"><strong>Email:</strong> <a href="mailto:R.Jiang-21@sms.ed.ac.uk">R.Jiang-21@sms.ed.ac.uk</a></p>
-					<p style="margin:0;"><strong>Website:</strong> <a href="https://rhodajiang.github.io/">rhodajiang.github.io</a></p>
-				</div>
+    <!-- SELECTED PROJECTS -->
+    <article id="projects" class="wrapper style2">
+      <div class="container">
+        <header class="stack">
+          <h2 style="margin:0;">Selected Projects</h2>
+          <p class="measure quiet center" style="margin-top:.35rem;">
+            A small, curated set—projects that best represent my current direction.
+          </p>
+        </header>
 
-				<footer style="margin-top: 1.2rem;">
-					<ul id="copyright">
-						<li>&copy; Rhoda Jiang</li>
-						<li>Base template: HTML5 UP (Miniport)</li>
-					</ul>
-				</footer>
-			</div>
-		</article>
+        <div class="center" style="margin-top: 1rem; max-width: 1040px;">
+          <div class="row2">
+            <!-- Project card 1 (Video) -->
+            <section class="card">
+              <div class="kicker quiet">Project</div>
+              <h3 style="margin:.25rem 0 .4rem 0;">Competition Video</h3>
+              <p class="quiet" style="margin:0;">
+                A short film / moving-image piece exploring <em>[theme]</em>. My role: <em>[role]</em>.
+              </p>
+              <p class="quiet" style="margin:.7rem 0 0 0;">
+                Watch: <a href="https://youtu.be/xaQxdUANO8k">YouTube link</a>
+              </p>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+              <!-- Optional embed (keep if you want; remove if you want text-only like Sarah) -->
+              <div class="video-wrap" style="margin-top: .9rem;">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/xaQxdUANO8k"
+                  title="Competition Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </section>
 
-	</body>
+            <!-- Project card 2 -->
+            <section class="card">
+              <div class="kicker quiet">Project</div>
+              <h3 style="margin:.25rem 0 .4rem 0;">[Selected Project Title]</h3>
+              <p class="quiet" style="margin:0;">
+                One sentence on what it is, and one sentence on why it matters (for your research or broader question).
+              </p>
+              <p class="quiet" style="margin:.7rem 0 0 0;">
+                Links: <a href="[Link]">Project</a> · <a href="[Link]">Materials</a>
+              </p>
+              <div style="margin-top:.7rem;">
+                <span class="pill">[Keyword]</span><span class="pill">[Keyword]</span>
+              </div>
+            </section>
+
+            <!-- Project card 3 -->
+            <section class="card">
+              <div class="kicker quiet">Project</div>
+              <h3 style="margin:.25rem 0 .4rem 0;">[Selected Project Title]</h3>
+              <p class="quiet" style="margin:0;">
+                Short description. Keep it calm and specific: topic, method, output.
+              </p>
+              <p class="quiet" style="margin:.7rem 0 0 0;">
+                Links: <a href="[Link]">Link</a>
+              </p>
+            </section>
+
+            <!-- Project card 4 -->
+            <section class="card">
+              <div class="kicker quiet">Project</div>
+              <h3 style="margin:.25rem 0 .4rem 0;">[Selected Project Title]</h3>
+              <p class="quiet" style="margin:0;">
+                Short description.
+              </p>
+              <p class="quiet" style="margin:.7rem 0 0 0;">
+                Links: <a href="[Link]">Link</a>
+              </p>
+            </section>
+          </div>
+
+          <p class="quiet center measure" style="margin-top: 1.1rem;">
+            Tip: “Selected” is a design principle. 3–5 projects is perfect; more can live in the CV.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- A LITTLE MORE -->
+    <article id="more" class="wrapper style3">
+      <div class="container">
+        <header class="stack">
+          <h2 style="margin:0;">A little more</h2>
+          <p class="measure quiet center" style="margin-top:.35rem;">
+            Not the main line—just a few traces: posters, picture books, photography.
+          </p>
+        </header>
+
+        <div class="center" style="margin-top: 1rem; max-width: 1040px;">
+          <div class="row2">
+            <section class="card">
+              <div class="kicker quiet">Posters</div>
+              <h3 style="margin:.25rem 0 .4rem 0;">4 posters</h3>
+              <p class="quiet" style="margin:0;">
+                If you want to keep this academic-first, show only 4 thumbnails here and link to the full set later.
+              </p>
+              <p class="quiet" style="margin:.7rem 0 0 0;">
+                Files: <span class="quiet">images/posters/poster-01.jpg … poster-04.jpg</span>
+              </p>
+            </section>
+
+            <section class="card">
+              <div class="kicker quiet">Interests</div>
+              <h3 style="margin:.25rem 0 .4rem 0;">Picture book &amp; photography</h3>
+              <p class="quiet" style="margin:0;">
+                A sentence that feels like you (not a resume). Example: “I keep a small picture-book notebook and photograph
+                everyday light—mostly as a way of thinking.”
+              </p>
+              <p class="quiet" style="margin:.7rem 0 0 0;">
+                Optional links: <a href="[Instagram / portfolio link]">Link</a>
+              </p>
+            </section>
+          </div>
+
+          <section class="card" style="margin-top: 18px;">
+            <div class="kicker quiet">Contact</div>
+            <h3 style="margin:.25rem 0 .4rem 0;">Say hi</h3>
+            <p class="quiet" style="margin:0;">
+              Email: <a href="mailto:R.Jiang-21@sms.ed.ac.uk">R.Jiang-21@sms.ed.ac.uk</a>
+              <br />
+              University: <a href="[Department profile link]">[profile link]</a>
+              <!-- Add Scholar/ORCID if you have them -->
+            </p>
+          </section>
+
+          <footer style="margin-top: 1.2rem;">
+            <ul id="copyright">
+              <li>&copy; Rhoda Jiang</li>
+              <li>Built on HTML5 UP (Miniport) with custom styling.</li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </article>
+
+    <!-- Scripts (keep these if your template uses smooth scrolling / nav behavior) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
 </html>
