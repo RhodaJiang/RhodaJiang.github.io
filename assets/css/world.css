@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Rhoda Jiang — a small personal world</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/world.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="container">
+				<li><a href="#top">Home</a></li>
+				<li><a href="#posters">Posters</a></li>
+				<li><a href="#video">Video</a></li>
+				<li><a href="#book">Picture Book</a></li>
+				<li><a href="#photo">Photography</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+
+		<!-- Home -->
+		<article id="top" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-5-large col-12-medium">
+						<span class="image fit" style="border-radius:22px; overflow:hidden; border:1px solid rgba(35,31,26,.14);">
+							<img src="images/1_photo.png" alt="Rhoda" />
+						</span>
+					</div>
+
+					<div class="col-8 col-7-large col-12-medium">
+						<header>
+							<h1>Hi, I’m <strong>Rhoda Jiang</strong>.</h1>
+						</header>
+
+						<p style="max-width: 56ch;">
+							This is my small personal world — a place for posters, moving images,
+							picture-book notes, and photography.
+						</p>
+
+						<p style="max-width: 56ch;">
+							(For now, the rooms are simple — we’ll keep it calm and let the works speak.)
+						</p>
+
+						<ul class="actions">
+							<li><a href="#posters" class="button primary">Enter</a></li>
+							<li><a href="Rhoda_Jiang_CV_2024v.pdf" class="button">Download CV</a></li>
+						</ul>
+
+						<div class="room-grid">
+							<a href="#posters" class="card">
+								<div class="room-title"><h3 style="margin:0;">Posters</h3><span>exhibition wall</span></div>
+								<p style="margin:0;">Four posters, shown like a small gallery.</p>
+							</a>
+							<a href="#video" class="card">
+								<div class="room-title"><h3 style="margin:0;">Video</h3><span>main screen</span></div>
+								<p style="margin:0;">Competition piece on a dedicated stage.</p>
+							</a>
+							<a href="#book" class="card">
+								<div class="room-title"><h3 style="margin:0;">Picture Book</h3><span>flip through</span></div>
+								<p style="margin:0;">Sketches & story fragments (coming in the next round).</p>
+							</a>
+							<a href="#photo" class="card">
+								<div class="room-title"><h3 style="margin:0;">Photography</h3><span>quiet corridor</span></div>
+								<p style="margin:0;">Series / studies (coming in the next round).</p>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<!-- Posters -->
+		<article id="posters" class="wrapper style2">
+			<div class="container">
+				<header>
+					<h2>Posters</h2>
+					<p>A small wall — click to view larger.</p>
+				</header>
+
+				<div class="gallery">
+					<a href="images/posters/poster-01.jpg"><img src="images/posters/poster-01.jpg" alt="Poster 01"></a>
+					<a href="images/posters/poster-02.jpg"><img src="images/posters/poster-02.jpg" alt="Poster 02"></a>
+					<a href="images/posters/poster-03.jpg"><img src="images/posters/poster-03.jpg" alt="Poster 03"></a>
+					<a href="images/posters/poster-04.jpg"><img src="images/posters/poster-04.jpg" alt="Poster 04"></a>
+				</div>
+
+				<p style="margin-top: 1rem; color: rgba(35,31,26,.65);">
+					Tip: put your 4 poster files under <code>images/posters/</code> with the names above.
+				</p>
+			</div>
+		</article>
+
+		<!-- Video -->
+		<article id="video" class="wrapper style3">
+			<div class="container">
+				<header>
+					<h2>Video</h2>
+					<p>Competition piece — displayed as a “main screen”.</p>
+				</header>
+
+				<div class="video-wrap">
+					<iframe
+						src="https://www.youtube-nocookie.com/embed/xaQxdUANO8k"
+						title="Competition Video"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen></iframe>
+				</div>
+
+				<div class="card" style="max-width: 980px; margin: 14px auto 0;">
+					<h3 style="margin:0 0 .35rem 0;">About this piece</h3>
+					<p style="margin:0;">
+						(Next: you send me 1–2 lines about the theme + your role, I’ll write a better “label card” here.)
+					</p>
+				</div>
+			</div>
+		</article>
+
+		<!-- Picture Book -->
+		<article id="book" class="wrapper style2">
+			<div class="container">
+				<header>
+					<h2>Picture Book</h2>
+					<p>Sketches, drafts, and story fragments — we’ll build a “flip-through” view next.</p>
+				</header>
+
+				<div class="room-grid">
+					<a class="card" href="#contact">
+						<div class="room-title"><h3 style="margin:0;">Sketchbook</h3><span>coming soon</span></div>
+						<p style="margin:0;">A calm vertical reading experience.</p>
+					</a>
+					<a class="card" href="#contact">
+						<div class="room-title"><h3 style="margin:0;">Picture Book Project</h3><span>coming soon</span></div>
+						<p style="margin:0;">A project page with pages in order.</p>
+					</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Photography -->
+		<article id="photo" class="wrapper style3">
+			<div class="container">
+				<header>
+					<h2>Photography</h2>
+					<p>A quiet corridor — we can do series or a grid (next round).</p>
+				</header>
+
+				<div class="card" style="max-width: 980px; margin: 0 auto;">
+					<p style="margin:0;">
+						When you’re ready, drop 6–12 photos (or 1–2 series). I’ll turn this into a gallery layout.
+					</p>
+				</div>
+			</div>
+		</article>
+
+		<!-- Contact -->
+		<article id="contact" class="wrapper style4">
+			<div class="container medium">
+				<header>
+					<h2>Contact</h2>
+					<p>Leave a note / say hi.</p>
+				</header>
+
+				<div class="card" style="text-align:left;">
+					<p style="margin:0 0 .5rem 0;"><strong>Email:</strong> <a href="mailto:R.Jiang-21@sms.ed.ac.uk">R.Jiang-21@sms.ed.ac.uk</a></p>
+					<p style="margin:0;"><strong>Website:</strong> <a href="https://rhodajiang.github.io/">rhodajiang.github.io</a></p>
+				</div>
+
+				<footer style="margin-top: 1.2rem;">
+					<ul id="copyright">
+						<li>&copy; Rhoda Jiang</li>
+						<li>Base template: HTML5 UP (Miniport)</li>
+					</ul>
+				</footer>
+			</div>
+		</article>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
