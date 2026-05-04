@@ -1,146 +1,551 @@
-<!DOCTYPE HTML>
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Three Column - Minimaxing by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Life - Rhoda Jiang</title>
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
 
-								<header id="header">
-									<h1><a href="index.html" id="logo">Rhoda Jiang</a></h1>
-									<nav id="nav">
-										<a href="index.html">Homepage</a>
-										<a href="twocolumn1.html">Research</a>
-										<a href="twocolumn2.html">Projects</a>
-										<a href="onecolumn.html">Industtry</a>
-										<a href="threecolumn.html" class="current-page-item">Life</a>
-									</nav>
-								</header>
+		body {
+			min-height: 100vh;
+			background: #f2f3f6;
+			font-family: Georgia, "Times New Roman", serif;
+			color: #3f3a37;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 
-			<!-- Main -->
-				<div id="main">
-					<div class="container">
-						<div class="row main-row">
-							<div class="col-3 col-12-medium">
+		img {
+			display: block;
+			max-width: 100%;
+		}
 
-								<section>
-									<h2>Compelling links</h2>
-									<ul class="link-list">
-										<li><a href="#">Quis accumsan lorem</a></li>
-										<li><a href="#">Sed neque nisi consequat</a></li>
-										<li><a href="#">Eget et amet consequat</a></li>
-										<li><a href="#">Dapibus sed mattis blandit</a></li>
-										<li><a href="#">Vitae magna sed dolore</a></li>
-										<li><a href="#">Eget et amet consequat</a></li>
-										<li><a href="#">Dapibus sed mattis blandit</a></li>
-									</ul>
-								</section>
+		/* Navigation */
+		.life-nav {
+			width: 100%;
+			padding: 24px 7vw 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+			position: relative;
+			z-index: 20;
+		}
 
-								<section>
-									<h2>Something profound</h2>
-									<p>Duis neque sed nisi, dapibus sed mattis rutrum accumsan sed.
-									Suspendisse eu varius amet nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor consequat blandit tempus ipsum dolor lorem sit amet.</p>
-								</section>
+		.life-brand {
+			font-size: 1.35rem;
+			letter-spacing: 0.04em;
+			color: #4a3b32;
+		}
 
-							</div>
-							<div class="col-6 col-12-medium imp-medium">
+		.life-links {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
 
-								<section class="middle-content">
-									<h2>Three Column (two sidebars)</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ante ante, viverra a ornare sed, convallis sed est. Proin felis sapien, adipiscing quis eleifend vel, sodales vitae sapien. Donec vel lacus leo, eu convallis metus. Cras egestas feugiat tortor, vitae interdum augue aliquam a. Sed nec augue id orci egestas commodo in eget magna. Nunc eleifend diam non odio laoreet placerat gravida nulla bibendum. Phasellus tempus imperdiet suscipit.</p>
-									<p>Mauris risus nulla, pulvinar vitae sagittis a, pharetra nec tellus. Suspendisse varius enim ac felis mattis aliquam. Aenean et justo quis ipsum gravida lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia bibendum cursus. Nullam nec pellentesque lacus. In porta erat in tortor rhoncus quis accumsan magna pretium. Nulla posuere magna eget mauris lacinia in mollis sem fermentum. Donec mollis adipiscing mauris, ut posuere enim rhoncus ut. Nunc commodo vestibulum orci vel placerat. Cras sed risus libero. Donec ac lacus vitae lectus mattis commodo id vitae libero. Etiam lorem odio, volutpat nec pulvinar sit amet, tincidunt ut lacus. Pellentesque consequat arcu vel nisi lobortis in pellentesque orci sollicitudin. Cras gravida lacus turpis, consectetur porttitor lectus. Cras malesuada tortor id neque porta ut semper quam iaculis.</p>
-									<p>Nulla ut tortor quam, a luctus nunc. Nulla condimentum diam porttitor arcu placerat tincidunt. Nunc non augue ipsum. Nulla facilisi. Phasellus feugiat augue in ipsum egestas semper. Suspendisse blandit, nisl ullamcorper blandit sollicitudin, sem leo auctor lectus, et volutpat mauris elit et odio. Ut elementum risus in metus mollis tristique vulputate nulla interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae orci dui, ut facilisis dui.</p>
-								</section>
+		.life-links a {
+			padding: 8px 18px;
+			border: 1px solid rgba(74, 59, 50, 0.22);
+			border-radius: 999px;
+			background: rgba(255, 250, 242, 0.5);
+			font-size: 0.95rem;
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
 
-							</div>
-							<div class="col-3 col-12-medium">
+		.life-links a:hover,
+		.life-links a.active {
+			background: rgba(234, 208, 207, 0.72);
+			color: #7c6878;
+		}
 
-								<section>
-									<h2>Who are you guys?</h2>
-									<ul class="small-image-list">
-										<li>
-											<a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
-											<h4>Jane Anderson</h4>
-											<p>Varius nibh. Suspendisse vitae magna eget et amet mollis justo facilisis amet quis.</p>
-										</li>
-										<li>
-											<a href="#"><img src="images/pic1.jpg" alt="" class="left" /></a>
-											<h4>James Doe</h4>
-											<p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
-										</li>
-									</ul>
-								</section>
+		/* Page shell */
+		.life-page {
+			width: calc(100% - 56px);
+			max-width: 1320px;
+			margin: 18px auto 42px;
+			min-height: 980px;
+			position: relative;
+			overflow: hidden;
+			border-radius: 2px;
+			background:
+				radial-gradient(circle at 18% 15%, rgba(255,255,255,0.5), transparent 22%),
+				radial-gradient(circle at 86% 75%, rgba(255,255,255,0.45), transparent 26%),
+				linear-gradient(135deg, #ead8d2 0%, #f3e5df 46%, #ead2cc 100%);
+			box-shadow: 0 18px 42px rgba(74, 59, 50, 0.08);
+		}
 
-								<section>
-									<h2>How about some links?</h2>
-									<ul class="link-list">
-										<li><a href="#">Quis accumsan lorem</a></li>
-										<li><a href="#">Sed neque nisi consequat</a></li>
-										<li><a href="#">Eget et amet consequat</a></li>
-										<li><a href="#">Dapibus sed mattis blandit</a></li>
-										<li><a href="#">Vitae magna sed dolore</a></li>
-									</ul>
-								</section>
+		/* Soft botanical line drawings */
+		.life-page::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			opacity: 0.26;
+			background:
+				radial-gradient(ellipse at 6% 10%, rgba(120, 100, 92, 0.18), transparent 16%),
+				radial-gradient(ellipse at 93% 20%, rgba(120, 100, 92, 0.15), transparent 18%),
+				radial-gradient(ellipse at 88% 72%, rgba(120, 100, 92, 0.12), transparent 18%);
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		.life-page::after {
+			content: "connection";
+			position: absolute;
+			right: -0.1em;
+			bottom: -0.18em;
+			font-size: clamp(5rem, 13vw, 13rem);
+			font-style: italic;
+			font-weight: bold;
+			letter-spacing: -0.06em;
+			color: rgba(74, 59, 50, 0.055);
+			z-index: 1;
+			pointer-events: none;
+		}
 
-								<section>
-									<h2>Something of interest</h2>
-									<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-									Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor sit blandit.</p>
-									<footer class="controls">
-										<a href="#" class="button">Oh, please continue ....</a>
-									</footer>
-								</section>
+		/* Header */
+		.life-header {
+			position: relative;
+			z-index: 3;
+			padding: 58px 7vw 18px;
+			max-width: 760px;
+		}
 
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
+		.life-header h1 {
+			font-size: clamp(3.8rem, 8vw, 8rem);
+			line-height: 0.92;
+			font-weight: normal;
+			font-style: italic;
+			color: #211816;
+			letter-spacing: -0.04em;
+		}
 
-								<div id="copyright">
-									&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-								</div>
+		.life-header p {
+			margin-top: 18px;
+			font-size: 1.08rem;
+			line-height: 1.8;
+			color: #6f5f59;
+			max-width: 640px;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		.life-tags {
+			margin-top: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 9px;
+		}
 
+		.life-tag {
+			padding: 6px 12px;
+			border-radius: 999px;
+			background: rgba(255, 250, 242, 0.54);
+			border: 1px solid rgba(74, 59, 50, 0.12);
+			color: #6f5f59;
+			font-size: 0.82rem;
+		}
+
+		/* Gallery board */
+		.gallery-board {
+			position: relative;
+			z-index: 5;
+			width: 100%;
+			min-height: 780px;
+			margin-top: 10px;
+		}
+
+		.polaroid {
+			position: absolute;
+			background: #fffaf5;
+			padding: 14px 14px 46px;
+			box-shadow:
+				0 14px 25px rgba(74, 59, 50, 0.18),
+				0 2px 5px rgba(74, 59, 50, 0.08);
+			transition: transform 0.28s ease, box-shadow 0.28s ease, z-index 0.28s ease;
+			cursor: default;
+			z-index: 4;
+		}
+
+		.polaroid img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			background: #ead8d2;
+			filter: saturate(0.9) contrast(0.95);
+		}
+
+		.polaroid figcaption {
+			position: absolute;
+			left: 14px;
+			right: 14px;
+			bottom: 12px;
+			font-size: 0.82rem;
+			color: #7b6962;
+			text-align: center;
+			line-height: 1.2;
+		}
+
+		/* tape */
+		.polaroid::before {
+			content: "";
+			position: absolute;
+			width: 70px;
+			height: 22px;
+			top: -12px;
+			left: 50%;
+			transform: translateX(-50%) rotate(-3deg);
+			background: rgba(220, 209, 192, 0.75);
+			box-shadow: 0 2px 5px rgba(74, 59, 50, 0.09);
+			z-index: 3;
+		}
+
+		/* hover note */
+		.polaroid::after {
+			content: attr(data-note);
+			position: absolute;
+			left: 50%;
+			bottom: calc(100% + 12px);
+			transform: translateX(-50%) translateY(8px);
+			width: max-content;
+			max-width: 260px;
+			padding: 10px 14px;
+			border-radius: 16px;
+			background: rgba(255, 250, 242, 0.94);
+			border: 1px solid rgba(74, 59, 50, 0.14);
+			box-shadow: 0 10px 24px rgba(74, 59, 50, 0.13);
+			color: #4a3b32;
+			font-size: 0.88rem;
+			line-height: 1.45;
+			text-align: center;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.25s ease, transform 0.25s ease;
+			z-index: 50;
+		}
+
+		.polaroid:hover {
+			transform: rotate(0deg) scale(1.08);
+			box-shadow:
+				0 24px 46px rgba(74, 59, 50, 0.25),
+				0 4px 10px rgba(74, 59, 50, 0.1);
+			z-index: 40;
+		}
+
+		.polaroid:hover::after {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+
+		/* Individual photo positions */
+		.p1 {
+			width: 190px;
+			height: 230px;
+			left: 8%;
+			top: 120px;
+			transform: rotate(-3deg);
+		}
+
+		.p2 {
+			width: 220px;
+			height: 260px;
+			left: 18%;
+			top: 55px;
+			transform: rotate(2deg);
+		}
+
+		.p3 {
+			width: 190px;
+			height: 230px;
+			left: 33%;
+			top: 100px;
+			transform: rotate(-1deg);
+		}
+
+		.p4 {
+			width: 210px;
+			height: 250px;
+			left: 48%;
+			top: 42px;
+			transform: rotate(2.5deg);
+		}
+
+		.p5 {
+			width: 200px;
+			height: 240px;
+			left: 64%;
+			top: 90px;
+			transform: rotate(-2deg);
+		}
+
+		.p6 {
+			width: 180px;
+			height: 220px;
+			left: 13%;
+			top: 350px;
+			transform: rotate(3deg);
+		}
+
+		.p7 {
+			width: 230px;
+			height: 275px;
+			left: 27%;
+			top: 330px;
+			transform: rotate(-2.5deg);
+		}
+
+		.p8 {
+			width: 220px;
+			height: 265px;
+			left: 43%;
+			top: 315px;
+			transform: rotate(2deg);
+		}
+
+		.p9 {
+			width: 210px;
+			height: 250px;
+			left: 59%;
+			top: 330px;
+			transform: rotate(-1deg);
+		}
+
+		.p10 {
+			width: 190px;
+			height: 230px;
+			left: 72%;
+			top: 360px;
+			transform: rotate(3deg);
+		}
+
+		.p11 {
+			width: 210px;
+			height: 250px;
+			left: 20%;
+			top: 570px;
+			transform: rotate(-3deg);
+		}
+
+		.p12 {
+			width: 190px;
+			height: 230px;
+			left: 41%;
+			top: 590px;
+			transform: rotate(2deg);
+		}
+
+		.p13 {
+			width: 200px;
+			height: 240px;
+			left: 56%;
+			top: 585px;
+			transform: rotate(-2deg);
+		}
+
+		/* Footer note */
+		.life-note {
+			position: relative;
+			z-index: 6;
+			width: min(760px, 86%);
+			margin: 0 auto 70px;
+			padding: 26px 30px;
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.62);
+			border: 1px solid rgba(74, 59, 50, 0.12);
+			box-shadow: 0 12px 30px rgba(74, 59, 50, 0.08);
+			color: #5f5551;
+			line-height: 1.85;
+		}
+
+		.life-note strong {
+			color: #4a3b32;
+			font-weight: normal;
+		}
+
+		/* Mobile layout */
+		@media (max-width: 900px) {
+			.life-nav {
+				display: block;
+				text-align: center;
+			}
+
+			.life-brand {
+				display: block;
+				margin-bottom: 14px;
+			}
+
+			.life-links {
+				justify-content: center;
+			}
+
+			.life-page {
+				width: calc(100% - 24px);
+				margin: 12px auto 34px;
+				min-height: auto;
+			}
+
+			.life-header {
+				padding: 44px 24px 10px;
+			}
+
+			.gallery-board {
+				position: relative;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 22px;
+				min-height: auto;
+				padding: 32px 22px 50px;
+			}
+
+			.polaroid {
+				position: relative;
+				left: auto;
+				top: auto;
+				width: 100%;
+				height: 240px;
+				transform: rotate(0deg);
+			}
+
+			.polaroid:hover {
+				transform: scale(1.03);
+			}
+
+			.polaroid::after {
+				width: 220px;
+			}
+		}
+
+		@media (max-width: 560px) {
+			.gallery-board {
+				grid-template-columns: 1fr;
+			}
+
+			.polaroid {
+				height: 300px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="life-nav">
+		<a href="index.html" class="life-brand">Rhoda Jiang</a>
+
+		<div class="life-links">
+			<a href="index.html">Home</a>
+			<a href="cv.html">CV</a>
+			<a href="twocolumn1.html">Research</a>
+			<a href="onecolumn.html">Engagement</a>
+			<a href="threecolumn.html" class="active">Life</a>
+		</div>
+	</nav>
+
+	<main class="life-page">
+
+		<header class="life-header">
+			<h1>My Square</h1>
+			<p>
+				A personal square of connection, memory, movement, solitude, and becoming.
+				Not a feed, not a performance, but a place to keep what quietly holds me together.
+			</p>
+
+			<div class="life-tags">
+				<span class="life-tag">Edinburgh</span>
+				<span class="life-tag">People</span>
+				<span class="life-tag">Body & Dance</span>
+				<span class="life-tag">Family</span>
+				<span class="life-tag">Women Across Time</span>
+				<span class="life-tag">Solitude</span>
+				<span class="life-tag">Love & Reflection</span>
+			</div>
+		</header>
+
+		<section class="gallery-board" aria-label="Life photo wall">
+
+			<figure class="polaroid p1" data-note="Connection With Edinburgh: learning the city through walking and photographing.">
+				<img src="images/life/life-01.jpg" alt="Life photo 1">
+				<figcaption>Edinburgh</figcaption>
+			</figure>
+
+			<figure class="polaroid p2" data-note="Connection With My Body: ballet, contemporary dance, and returning to movement.">
+				<img src="images/life/life-02.jpg" alt="Life photo 2">
+				<figcaption>Body & Dance</figcaption>
+			</figure>
+
+			<figure class="polaroid p3" data-note="Connection With People: conversations, meals, small kindness, and being seen.">
+				<img src="images/life/life-03.jpg" alt="Life photo 3">
+				<figcaption>People</figcaption>
+			</figure>
+
+			<figure class="polaroid p4" data-note="Connection With Family: creative rituals and distance becoming a bridge.">
+				<img src="images/life/life-04.jpg" alt="Life photo 4">
+				<figcaption>Family</figcaption>
+			</figure>
+
+			<figure class="polaroid p5" data-note="Women Across Time: Jane Addams, Virginia Woolf, and cultural memory.">
+				<img src="images/life/life-05.jpg" alt="Life photo 5">
+				<figcaption>Women Across Time</figcaption>
+			</figure>
+
+			<figure class="polaroid p6" data-note="Solitude: quiet hours, loneliness, and learning to listen to myself.">
+				<img src="images/life/life-06.jpg" alt="Life photo 6">
+				<figcaption>Solitude</figcaption>
+			</figure>
+
+			<figure class="polaroid p7" data-note="Love & Reflection: care, distance, attention, longing, and openness.">
+				<img src="images/life/life-07.jpg" alt="Life photo 7">
+				<figcaption>Love</figcaption>
+			</figure>
+
+			<figure class="polaroid p8" data-note="Diary: small fragments that do not need to become a public performance.">
+				<img src="images/life/life-08.jpg" alt="Life photo 8">
+				<figcaption>Diary</figcaption>
+			</figure>
+
+			<figure class="polaroid p9" data-note="City Walks: returning to the same streets and seeing them differently.">
+				<img src="images/life/life-09.jpg" alt="Life photo 9">
+				<figcaption>City Walks</figcaption>
+			</figure>
+
+			<figure class="polaroid p10" data-note="Dance Notes: the body as a place to return to, not a project to perfect.">
+				<img src="images/life/life-10.jpg" alt="Life photo 10">
+				<figcaption>Dance Notes</figcaption>
+			</figure>
+
+			<figure class="polaroid p11" data-note="Family Illustration: a shared image became a way of speaking again.">
+				<img src="images/life/life-11.jpg" alt="Life photo 11">
+				<figcaption>Illustration</figcaption>
+			</figure>
+
+			<figure class="polaroid p12" data-note="Cultural Connection: books, places, and women who lived before me.">
+				<img src="images/life/life-12.jpg" alt="Life photo 12">
+				<figcaption>Culture</figcaption>
+			</figure>
+
+			<figure class="polaroid p13" data-note="A Personal Square: a place I build for myself, slowly and quietly.">
+				<img src="images/life/life-13.jpg" alt="Life photo 13">
+				<figcaption>My Square</figcaption>
+			</figure>
+
+		</section>
+
+		<div class="life-note">
+			<p>
+				<strong>This is my own square.</strong>
+			</p>
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	</main>
 
-	</body>
+</body>
 </html>

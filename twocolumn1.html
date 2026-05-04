@@ -1,99 +1,798 @@
-<!DOCTYPE HTML>
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Rhoda Jiang</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Research - Rhoda Jiang</title>
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
 
-								<header id="header">
-									<h1><a href="index.html" id="logo">Rhoda Jiang</a></h1>
-									<nav id="nav">
-										<a href="index.html">Homepage</a>
-										<a href="twocolumn1.html">Research</a>
-										<a href="twocolumn2.html" class="current-page-item">Projects</a>
-										<a href="onecolumn.html">Industry</a>
-										<a href="threecolumn.html">Life</a>
-									</nav>
-								</header>
+		body {
+			min-height: 100vh;
+			background:
+				radial-gradient(circle at 10% 8%, rgba(234, 208, 207, 0.55), transparent 30%),
+				radial-gradient(circle at 88% 15%, rgba(185, 199, 214, 0.45), transparent 34%),
+				linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+			font-family: Georgia, "Times New Roman", serif;
+			color: #3f3a37;
+			line-height: 1.7;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 
-			<!-- Main -->
-				<div id="main">
-					<div class="container">
-						<div class="row main-row">
-							<div class="col-4 col-12-medium">
+		img {
+			max-width: 100%;
+			display: block;
+		}
 
-								
+		/* Navigation */
+		.research-nav {
+			width: 100%;
+			padding: 24px 7vw 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+		}
 
-								
+		.research-brand {
+			font-size: 1.35rem;
+			letter-spacing: 0.04em;
+			color: #4a3b32;
+		}
 
-							</div>
-							<div class="col-8 col-12-medium imp-medium">
+		.research-links {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
 
-								<section>
-									<h2>Two Column #2 (left-hand sidebar)</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ante ante, viverra a ornare sed, convallis sed est. Proin felis sapien, adipiscing quis eleifend vel, sodales vitae sapien. Donec vel lacus leo, eu convallis metus. Cras egestas feugiat tortor, vitae interdum augue aliquam a. Sed nec augue id orci egestas commodo in eget magna. Nunc eleifend diam non odio laoreet placerat gravida nulla bibendum. Phasellus tempus imperdiet suscipit.</p>
-									<p>Mauris risus nulla, pulvinar vitae sagittis a, pharetra nec tellus. Suspendisse varius enim ac felis mattis aliquam. Aenean et justo quis ipsum gravida lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia bibendum cursus. Nullam nec pellentesque lacus. In porta erat in tortor rhoncus quis accumsan magna pretium. Nulla posuere magna eget mauris lacinia in mollis sem fermentum. Donec mollis adipiscing mauris, ut posuere enim rhoncus ut. Nunc commodo vestibulum orci vel placerat. Cras sed risus libero. Donec ac lacus vitae lectus mattis commodo id vitae libero. Etiam lorem odio, volutpat nec pulvinar sit amet, tincidunt ut lacus. Pellentesque consequat arcu vel nisi lobortis in pellentesque orci sollicitudin. Cras gravida lacus turpis, consectetur porttitor lectus. Cras malesuada tortor id neque porta ut semper quam iaculis.</p>
-									<p>Nulla ut tortor quam, a luctus nunc. Nulla condimentum diam porttitor arcu placerat tincidunt. Nunc non augue ipsum. Nulla facilisi. Phasellus feugiat augue in ipsum egestas semper. Suspendisse blandit, nisl ullamcorper blandit sollicitudin, sem leo auctor lectus, et volutpat mauris elit et odio. Ut elementum risus in metus mollis tristique vulputate nulla interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae orci dui, ut facilisis dui.</p>
-								</section>
+		.research-links a {
+			padding: 8px 18px;
+			border: 1px solid rgba(74, 59, 50, 0.22);
+			border-radius: 999px;
+			background: rgba(255, 250, 242, 0.45);
+			font-size: 0.95rem;
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		.research-links a:hover,
+		.research-links a.active {
+			background: rgba(234, 208, 207, 0.72);
+			color: #7c6878;
+		}
 
-								<section>
-									<h2>Something of interest</h2>
-									<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-									Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor sit blandit.</p>
-									<footer class="controls">
-										<a href="#" class="button">Oh, please continue ....</a>
-									</footer>
-								</section>
+		/* Header */
+		.research-header {
+			max-width: 1160px;
+			margin: 0 auto;
+			padding: 70px 7vw 40px;
+		}
 
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
+		.research-header h1 {
+			font-size: clamp(3rem, 8vw, 7rem);
+			line-height: 0.95;
+			font-weight: normal;
+			letter-spacing: 0.04em;
+			text-transform: capitalize;
+			color: #4a3b32;
+		}
 
-								<div id="copyright">
-									&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-								</div>
+		.research-header p {
+			max-width: 780px;
+			margin-top: 24px;
+			font-size: 1.15rem;
+			color: #6f5f59;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		.research-tags {
+			margin-top: 26px;
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
 
+		.research-tag {
+			padding: 6px 13px;
+			border-radius: 999px;
+			background: rgba(185, 199, 214, 0.38);
+			color: #5b5361;
+			font-size: 0.86rem;
+			letter-spacing: 0.03em;
+		}
+
+		/* Sections */
+		.research-main {
+			max-width: 1160px;
+			margin: 0 auto;
+			padding: 20px 7vw 90px;
+		}
+
+		.research-section {
+			margin-bottom: 80px;
+		}
+
+		.section-heading {
+			margin-bottom: 28px;
+		}
+
+		.section-heading h2 {
+			font-size: clamp(2rem, 4vw, 3.4rem);
+			font-weight: normal;
+			line-height: 1.05;
+			letter-spacing: 0.04em;
+			text-transform: capitalize;
+			color: #4a3b32;
+		}
+
+		.section-heading p {
+			max-width: 760px;
+			margin-top: 14px;
+			color: #6f5f59;
+			font-size: 1.05rem;
+		}
+
+		/* Introduction */
+		.intro-grid {
+			display: grid;
+			grid-template-columns: 1.05fr 0.95fr;
+			gap: 32px;
+			align-items: stretch;
+		}
+
+		.intro-card,
+		.image-card,
+		.map-card,
+		.progress-card,
+		.idea-card {
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.72);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			overflow: hidden;
+		}
+
+		.intro-card {
+			padding: 34px;
+		}
+
+		.intro-card h3 {
+			font-size: 1.6rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 14px;
+			text-transform: capitalize;
+		}
+
+		.intro-card p {
+			margin-bottom: 16px;
+			color: #4d4642;
+		}
+
+		.intro-list {
+			margin: 16px 0 0 20px;
+		}
+
+		.intro-list li {
+			margin-bottom: 8px;
+		}
+
+		.image-card img {
+			width: 100%;
+			height: 100%;
+			min-height: 380px;
+			object-fit: cover;
+		}
+
+		/* Idea Map */
+		.map-card {
+			padding: 24px;
+		}
+
+		.map-image-wrap {
+			border-radius: 22px;
+			overflow: hidden;
+			background: #fffaf2;
+			border: 1px solid rgba(138, 111, 90, 0.12);
+		}
+
+		.map-image-wrap img {
+			width: 100%;
+			max-height: 720px;
+			object-fit: contain;
+			background: #fffaf2;
+		}
+
+		.map-caption {
+			padding: 20px 4px 4px;
+			color: #5f5551;
+		}
+
+		.map-actions {
+			margin-top: 18px;
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+		}
+
+		.soft-button {
+			display: inline-block;
+			padding: 9px 18px;
+			border-radius: 999px;
+			border: 1px solid rgba(74, 59, 50, 0.22);
+			background: rgba(255, 250, 242, 0.72);
+			color: #4a3b32;
+			font-size: 0.94rem;
+			transition: all 0.25s ease;
+		}
+
+		.soft-button:hover {
+			background: rgba(216, 167, 167, 0.48);
+			color: #7c6878;
+		}
+
+		/* Research Progress */
+		.progress-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 22px;
+		}
+
+		.progress-card {
+			cursor: pointer;
+			transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+		}
+
+		.progress-card:hover {
+			transform: translateY(-5px);
+			background: rgba(255, 250, 242, 0.92);
+			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+		}
+
+		.progress-image img {
+			width: 100%;
+			height: 240px;
+			object-fit: cover;
+		}
+
+		.progress-content {
+			padding: 24px;
+		}
+
+		.progress-date {
+			font-size: 0.9rem;
+			color: #8a6f5a;
+			letter-spacing: 0.05em;
+			margin-bottom: 8px;
+		}
+
+		.progress-content h3 {
+			font-size: 1.35rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 10px;
+			text-transform: capitalize;
+		}
+
+		.progress-summary {
+			color: #4d4642;
+			font-size: 0.98rem;
+		}
+
+		.progress-details {
+			max-height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+		}
+
+		.progress-card:hover .progress-details,
+		.progress-card.open .progress-details {
+			max-height: 460px;
+			opacity: 1;
+			margin-top: 18px;
+		}
+
+		.detail-line {
+			padding-top: 16px;
+			border-top: 1px solid rgba(138, 111, 90, 0.16);
+		}
+
+		.detail-line ul {
+			margin: 10px 0 14px 20px;
+		}
+
+		.detail-line li {
+			margin-bottom: 6px;
+		}
+
+		.card-links {
+			margin-top: 14px;
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.card-links a {
+			padding: 7px 13px;
+			border-radius: 999px;
+			background: rgba(216, 167, 167, 0.3);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			font-size: 0.88rem;
+			color: #4a3b32;
+		}
+
+		.card-links a:hover {
+			background: rgba(216, 167, 167, 0.55);
+			color: #7c6878;
+		}
+
+		.hint {
+			margin-top: 12px;
+			font-size: 0.84rem;
+			color: #9a8174;
+			font-style: italic;
+		}
+
+		/* Reflection */
+		.ideas-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 22px;
+		}
+
+		.idea-card {
+			padding: 28px;
+			transition: transform 0.28s ease, box-shadow 0.28s ease;
+		}
+
+		.idea-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+		}
+
+		.idea-card h3 {
+			font-size: 1.35rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 12px;
+			text-transform: capitalize;
+		}
+
+		.idea-card p {
+			color: #4d4642;
+		}
+
+		.idea-label {
+			display: inline-block;
+			margin-bottom: 14px;
+			padding: 5px 12px;
+			border-radius: 999px;
+			background: rgba(185, 199, 214, 0.38);
+			color: #5b5361;
+			font-size: 0.82rem;
+		}
+
+		/* Footer */
+		.research-footer {
+			text-align: center;
+			padding: 42px 7vw;
+			color: #8a6f5a;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 900px) {
+			.research-nav {
+				display: block;
+				text-align: center;
+			}
+
+			.research-brand {
+				display: block;
+				margin-bottom: 14px;
+			}
+
+			.research-links {
+				justify-content: center;
+			}
+
+			.research-header {
+				padding-top: 45px;
+			}
+
+			.intro-grid,
+			.progress-grid,
+			.ideas-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.image-card img {
+				min-height: 280px;
+			}
+
+			.progress-image img {
+				height: 260px;
+			}
+		}
+		@media (max-width: 900px) {
+		...
+	}
+
+	/* Reflection Long Essays */
+	.reflection-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	.reflection-essay {
+		padding: 30px;
+		border-radius: 28px;
+		background: rgba(255, 250, 242, 0.76);
+		border: 1px solid rgba(138, 111, 90, 0.14);
+		box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+		backdrop-filter: blur(8px);
+	}	
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="research-nav">
+		<a href="index.html" class="research-brand">Rhoda Jiang</a>
+
+		<div class="research-links">
+			<a href="index.html">Home</a>
+			<a href="cv.html">CV</a>
+			<a href="twocolumn1.html" class="active">Research</a>
+			<a href="onecolumn.html">Engagement</a>
+			<a href="threecolumn.html">Life</a>
 		</div>
+	</nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Header -->
+	<header class="research-header">
+		<h1>Research</h1>
+		<p>
+			My research explores artificial intelligence, youth homelessness, social work,
+			and responsible innovation. This page presents my evolving research thinking,
+			current progress, and emerging ideas.
+		</p>
 
-	</body>
+		<div class="research-tags">
+			<span class="research-tag">AI</span>
+			<span class="research-tag">Youth Homelessness</span>
+			<span class="research-tag">Social Work</span>
+			<span class="research-tag">Digital Welfare</span>
+			<span class="research-tag">Responsible Innovation</span>
+		</div>
+	</header>
+
+	<main class="research-main">
+
+		<!-- 1. Introduction -->
+		<section class="research-section" id="introduction">
+			<div class="section-heading">
+				<h2>Introduction</h2>
+				<p>
+					A short overview of my PhD research, its background, and the questions that guide my work.
+				</p>
+			</div>
+
+			<div class="intro-grid">
+				<div class="intro-card">
+					<h3>My PhD Research</h3>
+
+					<p>
+						My PhD research focuses on the relationship between artificial intelligence,
+						youth homelessness, and social care. I am interested in how digital technologies
+						may shape support systems for young people experiencing homelessness.
+					</p>
+
+					<p>
+						Rather than treating AI as a purely technical tool, my research considers how it
+						interacts with lived experience, frontline practice, ethical responsibility,
+						and wider systems of inequality.
+					</p>
+
+					<ul class="intro-list">
+						<li>How might AI be used in youth homelessness support?</li>
+						<li>What ethical risks and responsibilities emerge in social care contexts?</li>
+						<li>How can young people and practitioners be meaningfully included?</li>
+					</ul>
+				</div>
+
+				<div class="image-card">
+					<img src="images/research/research-intro.jpg" alt="Research introduction image">
+				</div>
+			</div>
+		</section>
+
+		<!-- 2. How My Ideas Evolve -->
+		<section class="research-section" id="ideas-evolve">
+			<div class="section-heading">
+				<h2>How My Ideas Evolve</h2>
+				<p>
+					This section shows the conceptual map behind my research. It helps explain how my ideas,
+					questions, literature, and practice concerns connect.
+				</p>
+			</div>
+
+			<div class="map-card">
+				<div class="map-image-wrap">
+					<img src="images/research/idea-map.png" alt="Research idea map">
+				</div>
+
+				<div class="map-caption">
+					<p>
+						This map is an evolving visual representation of my research thinking. It connects
+						AI, youth homelessness, social work, ethics, digital support, service systems,
+						and lived experience. It is not a final framework, but a way to trace how my ideas
+						are developing over time.
+					</p>
+
+					<div class="map-actions">
+						<a href="images/research/idea-map.png" class="soft-button" target="_blank" rel="noopener noreferrer">
+							View Larger
+						</a>
+						<a href="#" class="soft-button">
+							Related Notes
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. Research Progress -->
+		<section class="research-section" id="research-progress">
+			<div class="section-heading">
+				<h2>Research Progress</h2>
+				<p>
+					Selected stages, materials, and outputs from my ongoing PhD research. Hover or click each card
+					to see more details.
+				</p>
+			</div>
+
+			<div class="progress-grid">
+
+				<!-- Progress Card 1 -->
+				<article class="progress-card">
+					<div class="progress-image">
+						<img src="images/research/progress-01.jpg" alt="Research progress 1">
+					</div>
+
+					<div class="progress-content">
+						<div class="progress-date">Stage One</div>
+						<h3>Developing The Research Focus</h3>
+
+						<p class="progress-summary">
+							Clarifying the central research questions around AI, youth homelessness,
+							and social care.
+						</p>
+
+						<div class="progress-details">
+							<div class="detail-line">
+								<p>
+									This stage focuses on understanding the research landscape and identifying
+									the key conceptual, ethical, and practical tensions.
+								</p>
+
+								<ul>
+									<li>Reviewed literature on youth homelessness and digital welfare.</li>
+									<li>Mapped early questions about AI and social care.</li>
+									<li>Identified ethical issues around risk, trust, and decision-making.</li>
+								</ul>
+
+								<div class="card-links">
+									<a href="#">Notes</a>
+									<a href="#">Slides</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="hint">Hover or click to view details</div>
+					</div>
+				</article>
+
+				<!-- Progress Card 2 -->
+				<article class="progress-card">
+					<div class="progress-image">
+						<img src="images/research/progress-02.jpg" alt="Research progress 2">
+					</div>
+
+					<div class="progress-content">
+						<div class="progress-date">Stage Two</div>
+						<h3>Building A Conceptual Framework</h3>
+
+						<p class="progress-summary">
+							Connecting social work, responsible AI, digital inequality, and support systems.
+						</p>
+
+						<div class="progress-details">
+							<div class="detail-line">
+								<p>
+									This stage develops a more structured way of thinking about the relationship
+									between technology and social support.
+								</p>
+
+								<ul>
+									<li>Explored responsible AI and social care literature.</li>
+									<li>Mapped stakeholders, risks, and possible benefits.</li>
+									<li>Connected theoretical concepts with practical service contexts.</li>
+								</ul>
+
+								<div class="card-links">
+									<a href="#">Concept Map</a>
+									<a href="#">Video Link</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="hint">Hover or click to view details</div>
+					</div>
+				</article>
+
+				<!-- Progress Card 3 -->
+				<article class="progress-card">
+					<div class="progress-image">
+						<img src="images/research/progress-03.jpg" alt="Research progress 3">
+					</div>
+
+					<div class="progress-content">
+						<div class="progress-date">Stage Three</div>
+						<h3>Sharing And Refining Ideas</h3>
+
+						<p class="progress-summary">
+							Presenting emerging ideas through discussions, events, conferences, or informal feedback.
+						</p>
+
+						<div class="progress-details">
+							<div class="detail-line">
+								<p>
+									This stage focuses on communicating early research ideas and using feedback
+									to refine the direction of the project.
+								</p>
+
+								<ul>
+									<li>Prepared visual materials and short research summaries.</li>
+									<li>Discussed emerging questions with peers and academic audiences.</li>
+									<li>Refined research framing based on feedback.</li>
+								</ul>
+
+								<div class="card-links">
+									<a href="#">Conference</a>
+									<a href="#">Poster</a>
+									<a href="#">Reflection</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="hint">Hover or click to view details</div>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- 4. Reflection & New Ideas -->
+<section class="research-section" id="reflection">
+	<div class="section-heading">
+		<h2>Reflection & New Ideas</h2>
+		<p>
+			This section collects longer research reflections, emerging questions,
+			and evolving ideas that grow from my PhD project.
+		</p>
+	</div>
+
+	<div class="reflection-list">
+
+		<article class="reflection-essay">
+			<div class="essay-meta">Research Reflection · May 2026</div>
+
+			<h3>Thinking About AI, Care, And Youth Homelessness</h3>
+
+			<p class="essay-summary">
+				This reflection explores why AI in youth homelessness should not be understood
+				only as a technical question, but also as a question of care, trust,
+				power, and social responsibility.
+			</p>
+
+			<details>
+				<summary>Read Reflection</summary>
+
+				<div class="essay-body">
+					<p>
+						Write your longer reflection here. This can be a full paragraph,
+						or several paragraphs. You can discuss where the idea came from,
+						how it connects to your PhD, and why it matters.
+					</p>
+
+					<p>
+						For example, you might reflect on how AI is often presented as a
+						neutral decision-making tool, while social work depends heavily on
+						context, relationships, professional judgement, and lived experience.
+					</p>
+
+					<p>
+						You can also use this space to document unfinished thoughts. It does
+						not have to be a final argument. It can be an evolving research note
+						that helps others understand how your thinking is developing over time.
+					</p>
+
+					<h4>Questions I Am Still Thinking About</h4>
+					<ul>
+						<li>Who gets to define what counts as risk?</li>
+						<li>How might AI change the relationship between young people and services?</li>
+						<li>Can AI-supported systems be designed without reproducing existing inequalities?</li>
+					</ul>
+
+					<div class="essay-links">
+						<a href="#">Related Notes</a>
+						<a href="#">Video Link</a>
+						<a href="#">Reading List</a>
+					</div>
+				</div>
+			</details>
+		</article>
+
+		<article class="reflection-essay">
+			<div class="essay-meta">Emerging Idea · 2026</div>
+
+			<h3>Digital Exclusion As A Research Concern</h3>
+
+			<p class="essay-summary">
+				This note considers how young people experiencing homelessness may face
+				digital barriers, and why this matters for AI-supported social care.
+			</p>
+
+			<details>
+				<summary>Read Reflection</summary>
+
+				<div class="essay-body">
+					<p>
+						Write a longer piece here about digital exclusion, access to devices,
+						data, privacy, institutional trust, and the risks of assuming that
+						digital services are equally accessible to everyone.
+					</p>
+
+					<p>
+						This space can hold your deeper thinking, examples, personal research
+						observations, or connections to literature.
+					</p>
+				</div>
+			</details>
+		</article>
+
+	</div>
+</section>
+
+	</main>
+
+	<footer class="research-footer">
+		&copy; Rhoda Jiang. Research archive.
+	</footer>
+
+	<script>
+		const progressCards = document.querySelectorAll('.progress-card');
+
+		progressCards.forEach((card) => {
+			card.addEventListener('click', function () {
+				this.classList.toggle('open');
+			});
+		});
+	</script>
+
+</body>
 </html>

@@ -1,92 +1,773 @@
-<!DOCTYPE HTML>
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>One Column - Minimaxing by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Engagement - Rhoda Jiang</title>
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
 
-								<header id="header">
-									<h1><a href="index.html" id="logo">Rhoda Jiang</a></h1>
-									<nav id="nav">
-										<a href="index.html">Homepage</a>
-										<a href="twocolumn1.html">Research</a>
-										<a href="twocolumn2.html">Projects</a>
-										<a href="onecolumn.html" class="current-page-item">Industry</a>
-										<a href="threecolumn.html">Life</a>
-									</nav>
-								</header>
+		body {
+			min-height: 100vh;
+			background:
+				radial-gradient(circle at 12% 8%, rgba(234, 208, 207, 0.55), transparent 30%),
+				radial-gradient(circle at 88% 18%, rgba(185, 199, 214, 0.45), transparent 34%),
+				linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+			font-family: Georgia, "Times New Roman", serif;
+			color: #3f3a37;
+			line-height: 1.7;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 
-			<!-- Main -->
-				<div id="main">
-					<div class="container">
-						<div class="row main-row">
-							<div class="col-12">
+		img {
+			max-width: 100%;
+			display: block;
+		}
 
-								<section>
-									<h2>One Column (no sidebar)</h2>
-									<p>This is the second generic interior page. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ante ante, viverra a ornare sed, convallis sed est. Proin felis sapien, adipiscing quis eleifend vel, sodales vitae sapien. Donec vel lacus leo, eu convallis metus. Cras egestas feugiat tortor, vitae interdum augue aliquam a. Sed nec augue id orci egestas commodo in eget magna. Nunc eleifend diam non odio laoreet placerat gravida nulla bibendum. Phasellus tempus imperdiet suscipit.</p>
-									<p>Mauris risus nulla, pulvinar vitae sagittis a, pharetra nec tellus. Suspendisse varius enim ac felis mattis aliquam. Aenean et justo quis ipsum gravida lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia bibendum cursus. Nullam nec pellentesque lacus. In porta erat in tortor rhoncus quis accumsan magna pretium. Nulla posuere magna eget mauris lacinia in mollis sem fermentum. Donec mollis adipiscing mauris, ut posuere enim rhoncus ut. Nunc commodo vestibulum orci vel placerat. Cras sed risus libero. Donec ac lacus vitae lectus mattis commodo id vitae libero. Etiam lorem odio, volutpat nec pulvinar sit amet, tincidunt ut lacus. Pellentesque consequat arcu vel nisi lobortis in pellentesque orci sollicitudin. Cras gravida lacus turpis, consectetur porttitor lectus. Cras malesuada tortor id neque porta ut semper quam iaculis.</p>
-									<p>Nulla ut tortor quam, a luctus nunc. Nulla condimentum diam porttitor arcu placerat tincidunt. Nunc non augue ipsum. Nulla facilisi. Phasellus feugiat augue in ipsum egestas semper. Suspendisse blandit, nisl ullamcorper blandit sollicitudin, sem leo auctor lectus, et volutpat mauris elit et odio. Ut elementum risus in metus mollis tristique vulputate nulla interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae orci dui, ut facilisis dui.</p>
-								</section>
+		/* Navigation */
+		.engagement-nav {
+			width: 100%;
+			padding: 24px 7vw 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		.engagement-brand {
+			font-size: 1.35rem;
+			letter-spacing: 0.04em;
+			color: #4a3b32;
+		}
 
-								<section>
-									<h2>Something of interest</h2>
-									<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-									Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor sit blandit.</p>
-									<footer class="controls">
-										<a href="#" class="button">Oh, please continue ....</a>
-									</footer>
-								</section>
+		.engagement-links {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
 
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
+		.engagement-links a {
+			padding: 8px 18px;
+			border: 1px solid rgba(74, 59, 50, 0.22);
+			border-radius: 999px;
+			background: rgba(255, 250, 242, 0.45);
+			font-size: 0.95rem;
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
 
-								<div id="copyright">
-									&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-								</div>
+		.engagement-links a:hover,
+		.engagement-links a.active {
+			background: rgba(234, 208, 207, 0.72);
+			color: #7c6878;
+		}
 
-							</div>
-						</div>
-					</div>
-				</div>
+		/* Header */
+		.engagement-header {
+			max-width: 1180px;
+			margin: 0 auto;
+			padding: 70px 7vw 42px;
+		}
 
+		.engagement-header h1 {
+			font-size: clamp(3rem, 8vw, 7rem);
+			line-height: 0.95;
+			font-weight: normal;
+			letter-spacing: 0.04em;
+			text-transform: capitalize;
+			color: #4a3b32;
+		}
+
+		.engagement-header p {
+			max-width: 820px;
+			margin-top: 24px;
+			font-size: 1.15rem;
+			color: #6f5f59;
+		}
+
+		.engagement-tags {
+			margin-top: 26px;
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.engagement-tag {
+			padding: 7px 15px;
+			border-radius: 999px;
+			background: rgba(185, 199, 214, 0.38);
+			color: #5b5361;
+			font-size: 0.88rem;
+			letter-spacing: 0.03em;
+			border: 1px solid rgba(138, 111, 90, 0.12);
+		}
+
+		/* Main */
+		.engagement-main {
+			max-width: 1180px;
+			margin: 0 auto;
+			padding: 20px 7vw 90px;
+		}
+
+		.engagement-section {
+			margin-bottom: 82px;
+		}
+
+		.section-heading {
+			margin-bottom: 28px;
+		}
+
+		.section-heading h2 {
+			font-size: clamp(2rem, 4vw, 3.4rem);
+			font-weight: normal;
+			line-height: 1.05;
+			letter-spacing: 0.04em;
+			text-transform: capitalize;
+			color: #4a3b32;
+		}
+
+		.section-heading p {
+			max-width: 780px;
+			margin-top: 14px;
+			color: #6f5f59;
+			font-size: 1.05rem;
+		}
+
+		/* Intro */
+		.intro-panel {
+			padding: 36px;
+			border-radius: 30px;
+			background: rgba(255, 250, 242, 0.76);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+		}
+
+		.intro-panel p {
+			max-width: 900px;
+			margin-bottom: 16px;
+			color: #4d4642;
+		}
+
+		.intro-panel strong {
+			color: #4a3b32;
+			font-weight: normal;
+		}
+
+		/* Featured Directions */
+		.direction-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 22px;
+		}
+
+		.direction-card {
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.72);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			overflow: hidden;
+			transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+		}
+
+		.direction-card:hover {
+			transform: translateY(-5px);
+			background: rgba(255, 250, 242, 0.92);
+			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+		}
+
+		.direction-image img {
+			width: 100%;
+			height: 220px;
+			object-fit: cover;
+		}
+
+		.direction-content {
+			padding: 25px;
+		}
+
+		.direction-label {
+			display: inline-block;
+			margin-bottom: 12px;
+			padding: 5px 12px;
+			border-radius: 999px;
+			background: rgba(185, 199, 214, 0.38);
+			color: #5b5361;
+			font-size: 0.82rem;
+		}
+
+		.direction-content h3 {
+			font-size: 1.45rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 10px;
+			text-transform: capitalize;
+		}
+
+		.direction-content p {
+			color: #4d4642;
+			font-size: 0.98rem;
+			margin-bottom: 16px;
+		}
+
+		.direction-content details {
+			margin-top: 12px;
+		}
+
+		.direction-content summary {
+			cursor: pointer;
+			color: #7c6878;
+			font-size: 0.95rem;
+		}
+
+		.direction-content details p {
+			margin-top: 12px;
+			padding-top: 12px;
+			border-top: 1px solid rgba(138, 111, 90, 0.14);
+		}
+
+		/* Roadmap */
+		.roadmap {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 16px;
+		}
+
+		.roadmap-step {
+			position: relative;
+			padding: 24px 20px;
+			border-radius: 24px;
+			background: rgba(255, 250, 242, 0.72);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 12px 30px rgba(74, 59, 50, 0.07);
+			min-height: 220px;
+		}
+
+		.step-number {
+			width: 34px;
+			height: 34px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			background: rgba(216, 167, 167, 0.52);
+			color: #4a3b32;
+			margin-bottom: 16px;
+		}
+
+		.roadmap-step h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 10px;
+		}
+
+		.roadmap-step p {
+			font-size: 0.94rem;
+			color: #5f5551;
+		}
+
+		/* Media Library */
+		.video-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 22px;
+		}
+
+		.video-card {
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.74);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			overflow: hidden;
+			transition: transform 0.28s ease, box-shadow 0.28s ease;
+		}
+
+		.video-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+		}
+
+		.video-thumb {
+			position: relative;
+		}
+
+		.video-thumb img {
+			width: 100%;
+			height: 210px;
+			object-fit: cover;
+		}
+
+		.play-badge {
+			position: absolute;
+			left: 18px;
+			bottom: 18px;
+			padding: 7px 13px;
+			border-radius: 999px;
+			background: rgba(255, 250, 242, 0.78);
+			color: #4a3b32;
+			font-size: 0.86rem;
+		}
+
+		.video-content {
+			padding: 24px;
+		}
+
+		.video-content h3 {
+			font-size: 1.28rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 10px;
+			text-transform: capitalize;
+		}
+
+		.video-content p {
+			color: #4d4642;
+			font-size: 0.96rem;
+			margin-bottom: 16px;
+		}
+
+		.card-links {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.card-links a,
+		.soft-button {
+			display: inline-block;
+			padding: 8px 15px;
+			border-radius: 999px;
+			background: rgba(216, 167, 167, 0.3);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			font-size: 0.9rem;
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
+
+		.card-links a:hover,
+		.soft-button:hover {
+			background: rgba(216, 167, 167, 0.55);
+			color: #7c6878;
+		}
+
+		/* Impact */
+		.impact-grid {
+			display: grid;
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: 24px;
+		}
+
+		.impact-card {
+			padding: 32px;
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.76);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+		}
+
+		.impact-card h3 {
+			font-size: 1.45rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 14px;
+			text-transform: capitalize;
+		}
+
+		.impact-card p {
+			color: #4d4642;
+			margin-bottom: 14px;
+		}
+
+		.impact-list {
+			margin-left: 20px;
+		}
+
+		.impact-list li {
+			margin-bottom: 8px;
+		}
+
+		.engagement-footer {
+			text-align: center;
+			padding: 42px 7vw;
+			color: #8a6f5a;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 980px) {
+			.engagement-nav {
+				display: block;
+				text-align: center;
+			}
+
+			.engagement-brand {
+				display: block;
+				margin-bottom: 14px;
+			}
+
+			.engagement-links {
+				justify-content: center;
+			}
+
+			.engagement-header {
+				padding-top: 45px;
+			}
+
+			.direction-grid,
+			.video-grid,
+			.impact-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.roadmap {
+				grid-template-columns: 1fr;
+			}
+
+			.direction-image img,
+			.video-thumb img {
+				height: 260px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="engagement-nav">
+		<a href="index.html" class="engagement-brand">Rhoda Jiang</a>
+
+		<div class="engagement-links">
+			<a href="index.html">Home</a>
+			<a href="cv.html">CV</a>
+			<a href="twocolumn1.html">Research</a>
+			<a href="onecolumn.html" class="active">Engagement</a>
+			<a href="threecolumn.html">Life</a>
 		</div>
+	</nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Header -->
+	<header class="engagement-header">
+		<h1>Engagement</h1>
+		<p>
+			A space for developing applied AI ideas, evaluation frameworks, assurance thinking,
+			and public-facing reflections on AI development across social and cultural contexts.
+		</p>
 
-	</body>
+		<div class="engagement-tags">
+			<span class="engagement-tag">AI Evaluation Framework</span>
+			<span class="engagement-tag">AI Assurance</span>
+			<span class="engagement-tag">AI In China</span>
+		</div>
+	</header>
+
+	<main class="engagement-main">
+
+		<!-- 1. Introduction -->
+		<section class="engagement-section">
+			<div class="section-heading">
+				<h2>Introduction</h2>
+				<p>
+					This page presents my applied and public-facing work beyond the core PhD research.
+				</p>
+			</div>
+
+			<div class="intro-panel">
+				<p>
+					<strong>Engagement</strong> is where I explore how research ideas can become tools,
+					frameworks, public knowledge, and practical interventions.
+				</p>
+
+				<p>
+					My current interests include designing an AI evaluation framework for vulnerable communities,
+					thinking about AI assurance in social care and public service contexts, and translating
+					developments in China’s AI landscape for wider audiences.
+				</p>
+
+				<p>
+					This section is designed as a growing showcase. It can hold project concepts, prototypes,
+					video explainers, visual materials, reflections, and impact-oriented outputs.
+				</p>
+			</div>
+		</section>
+
+		<!-- 2. Featured Directions -->
+		<section class="engagement-section">
+			<div class="section-heading">
+				<h2>Featured Directions</h2>
+				<p>
+					Three developing directions that shape my applied AI engagement work.
+				</p>
+			</div>
+
+			<div class="direction-grid">
+
+				<article class="direction-card">
+					<div class="direction-image">
+						<img src="images/engagement/evaluation-framework.jpg" alt="AI Evaluation Framework">
+					</div>
+
+					<div class="direction-content">
+						<span class="direction-label">Project Direction</span>
+						<h3>AI Evaluation Framework</h3>
+						<p>
+							Developing ways to evaluate whether AI tools are useful, safe, accessible,
+							and appropriate for vulnerable communities.
+						</p>
+
+						<details>
+							<summary>Read More</summary>
+							<p>
+								This direction may include criteria such as trust, accessibility, fairness,
+								explainability, user experience, safeguarding, and real-world usefulness.
+							</p>
+						</details>
+					</div>
+				</article>
+
+				<article class="direction-card">
+					<div class="direction-image">
+						<img src="images/engagement/ai-assurance.jpg" alt="AI Assurance">
+					</div>
+
+					<div class="direction-content">
+						<span class="direction-label">Conceptual Direction</span>
+						<h3>AI Assurance</h3>
+						<p>
+							Exploring how AI systems can be assessed, governed, and communicated in ways
+							that support accountability and responsible use.
+						</p>
+
+						<details>
+							<summary>Read More</summary>
+							<p>
+								This includes thinking about risk, safety, evidence, transparency,
+								professional responsibility, and how assurance practices can be meaningful
+								in social and public service settings.
+							</p>
+						</details>
+					</div>
+				</article>
+
+				<article class="direction-card">
+					<div class="direction-image">
+						<img src="images/engagement/ai-china.jpg" alt="AI in China">
+					</div>
+
+					<div class="direction-content">
+						<span class="direction-label">Public Knowledge</span>
+						<h3>AI In China</h3>
+						<p>
+							Creating accessible explanations and reflections on China’s AI development,
+							technology ecosystem, and social implications.
+						</p>
+
+						<details>
+							<summary>Read More</summary>
+							<p>
+								This direction can include short videos, explainers, public notes,
+								policy reflections, industry observations, and comparisons between
+								different AI development contexts.
+							</p>
+						</details>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- 3. Project Roadmap -->
+		<section class="engagement-section">
+			<div class="section-heading">
+				<h2>Project Roadmap</h2>
+				<p>
+					A flexible roadmap for turning ideas into prototypes, evaluation tools, public outputs,
+					and possible impact.
+				</p>
+			</div>
+
+			<div class="roadmap">
+
+				<div class="roadmap-step">
+					<div class="step-number">1</div>
+					<h3>Concept</h3>
+					<p>
+						Clarify the problem, target users, and social context behind the applied AI idea.
+					</p>
+				</div>
+
+				<div class="roadmap-step">
+					<div class="step-number">2</div>
+					<h3>Prototype</h3>
+					<p>
+						Develop early chatbot, framework, or visual materials to test how the idea works.
+					</p>
+				</div>
+
+				<div class="roadmap-step">
+					<div class="step-number">3</div>
+					<h3>Evaluation</h3>
+					<p>
+						Assess usefulness, safety, accessibility, trust, and fit for vulnerable communities.
+					</p>
+				</div>
+
+				<div class="roadmap-step">
+					<div class="step-number">4</div>
+					<h3>Communication</h3>
+					<p>
+						Share ideas through videos, short explainers, presentations, and public-facing notes.
+					</p>
+				</div>
+
+				<div class="roadmap-step">
+					<div class="step-number">5</div>
+					<h3>Impact</h3>
+					<p>
+						Connect the work to postdoc plans, collaborations, practice-facing outputs,
+						or future venture ideas.
+					</p>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- 4. Media & Video Library -->
+		<section class="engagement-section">
+			<div class="section-heading">
+				<h2>Media & Video Library</h2>
+				<p>
+					A growing collection of videos, explainers, visual notes, and project materials.
+					You can keep adding new cards here over time.
+				</p>
+			</div>
+
+			<div class="video-grid">
+
+				<article class="video-card">
+					<div class="video-thumb">
+						<img src="images/engagement/video-01.jpg" alt="AI Evaluation Framework video">
+						<span class="play-badge">Video</span>
+					</div>
+
+					<div class="video-content">
+						<h3>AI Evaluation Framework</h3>
+						<p>
+							A short introduction to why AI tools need to be evaluated carefully when used
+							with vulnerable communities.
+						</p>
+
+						<div class="card-links">
+							<a href="#" target="_blank" rel="noopener noreferrer">Watch Video</a>
+							<a href="#">Concept Note</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="video-card">
+					<div class="video-thumb">
+						<img src="images/engagement/video-02.jpg" alt="AI Assurance video">
+						<span class="play-badge">Video</span>
+					</div>
+
+					<div class="video-content">
+						<h3>What Is AI Assurance?</h3>
+						<p>
+							An accessible explanation of AI assurance and why it matters for trust,
+							accountability, and responsible innovation.
+						</p>
+
+						<div class="card-links">
+							<a href="#" target="_blank" rel="noopener noreferrer">Watch Video</a>
+							<a href="#">Reading List</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="video-card">
+					<div class="video-thumb">
+						<img src="images/engagement/video-03.jpg" alt="AI in China video">
+						<span class="play-badge">Video</span>
+					</div>
+
+					<div class="video-content">
+						<h3>AI In China</h3>
+						<p>
+							A public-facing explainer about China’s AI development, its ecosystem,
+							and its broader social implications.
+						</p>
+
+						<div class="card-links">
+							<a href="#" target="_blank" rel="noopener noreferrer">Watch Video</a>
+							<a href="#">Notes</a>
+						</div>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- 5. Impact & Next Steps -->
+		<section class="engagement-section">
+			<div class="section-heading">
+				<h2>Impact & Next Steps</h2>
+				<p>
+					This section connects applied AI ideas with future collaboration, postdoctoral direction,
+					and possible social impact.
+				</p>
+			</div>
+
+			<div class="impact-grid">
+				<div class="impact-card">
+					<h3>Potential Impact</h3>
+					<p>
+						This work aims to translate research thinking into practical and public-facing outputs.
+						It is especially concerned with how AI can be evaluated, explained, and responsibly
+						adapted for sensitive social contexts.
+					</p>
+
+					<ul class="impact-list">
+						<li>Supporting more responsible AI design for vulnerable communities.</li>
+						<li>Developing an evaluation framework for AI tools in social contexts.</li>
+						<li>Improving public understanding of AI development and assurance.</li>
+						<li>Connecting academic research with practice-facing innovation.</li>
+					</ul>
+				</div>
+
+				<div class="impact-card">
+					<h3>Next Steps</h3>
+					<p>
+						As this work develops, this page can become a public record of project progress,
+						prototypes, videos, presentations, and collaborations.
+					</p>
+
+					<div class="card-links">
+						<a href="#">Prototype</a>
+						<a href="#">Framework Draft</a>
+						<a href="#">Contact</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="engagement-footer">
+		&copy; Rhoda Jiang. Engagement archive.
+	</footer>
+
+</body>
 </html>

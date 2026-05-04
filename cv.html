@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Living CV - Rhoda Jiang</title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			min-height: 100vh;
+			background:
+				radial-gradient(circle at 10% 10%, rgba(234, 208, 207, 0.55), transparent 30%),
+				radial-gradient(circle at 90% 20%, rgba(185, 199, 214, 0.45), transparent 32%),
+				linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+			font-family: Georgia, "Times New Roman", serif;
+			color: #3f3a37;
+			line-height: 1.7;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		/* Top Navigation */
+		.cv-nav {
+			width: 100%;
+			padding: 24px 7vw 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.cv-brand {
+			font-size: 1.35rem;
+			letter-spacing: 0.04em;
+			color: #4a3b32;
+		}
+
+		.cv-links {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+
+		.cv-links a {
+			padding: 8px 18px;
+			border: 1px solid rgba(74, 59, 50, 0.22);
+			border-radius: 999px;
+			background: rgba(255, 250, 242, 0.45);
+			font-size: 0.95rem;
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
+
+		.cv-links a:hover,
+		.cv-links a.active {
+			background: rgba(234, 208, 207, 0.7);
+			color: #7c6878;
+		}
+
+		/* Page Header */
+		.cv-header {
+			padding: 70px 7vw 40px;
+			max-width: 1100px;
+			margin: 0 auto;
+		}
+
+		.cv-header h1 {
+			font-size: clamp(3rem, 8vw, 7rem);
+			line-height: 0.95;
+			font-weight: normal;
+			letter-spacing: 0.04em;
+			text-transform: capitalize;
+			color: #4a3b32;
+		}
+
+		.cv-header p {
+			max-width: 720px;
+			margin-top: 24px;
+			font-size: 1.15rem;
+			color: #6f5f59;
+		}
+
+		.cv-actions {
+			margin-top: 28px;
+			display: flex;
+			gap: 14px;
+			flex-wrap: wrap;
+		}
+
+		.cv-button {
+			display: inline-block;
+			padding: 10px 22px;
+			border-radius: 999px;
+			border: 1px solid rgba(74, 59, 50, 0.24);
+			background: rgba(255, 250, 242, 0.72);
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
+
+		.cv-button:hover {
+			background: rgba(216, 167, 167, 0.55);
+			color: #7c6878;
+		}
+
+		/* Timeline */
+		.timeline-wrapper {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 30px 7vw 90px;
+		}
+
+		.timeline {
+			position: relative;
+			padding-left: 34px;
+		}
+
+		.timeline::before {
+			content: "";
+			position: absolute;
+			left: 8px;
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background: linear-gradient(
+				to bottom,
+				rgba(124, 104, 120, 0.75),
+				rgba(216, 167, 167, 0.35),
+				rgba(185, 199, 214, 0.15)
+			);
+		}
+
+		.year-label {
+			margin: 42px 0 20px;
+			font-size: 1.4rem;
+			font-weight: normal;
+			color: #7c6878;
+			letter-spacing: 0.04em;
+		}
+
+		.timeline-item {
+			position: relative;
+			margin-bottom: 24px;
+			cursor: pointer;
+		}
+
+		.timeline-dot {
+			position: absolute;
+			left: -33px;
+			top: 28px;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: #d8a7a7;
+			border: 3px solid #fffaf2;
+			box-shadow: 0 0 0 3px rgba(216, 167, 167, 0.28);
+			z-index: 2;
+		}
+
+		.timeline-card {
+			position: relative;
+			padding: 24px 26px;
+			border-radius: 24px;
+			background: rgba(255, 250, 242, 0.72);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+		}
+
+		.timeline-card:hover {
+			transform: translateY(-4px);
+			background: rgba(255, 250, 242, 0.9);
+			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+		}
+
+		.item-date {
+			font-size: 0.92rem;
+			color: #8a6f5a;
+			letter-spacing: 0.05em;
+			margin-bottom: 8px;
+		}
+
+		.item-title {
+			font-size: 1.45rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 4px;
+			text-transform: capitalize;
+		}
+
+		.item-place {
+			font-size: 1rem;
+			color: #7c6878;
+			margin-bottom: 12px;
+		}
+
+		.item-summary {
+			font-size: 1rem;
+			color: #4d4642;
+			max-width: 760px;
+		}
+
+		.tags {
+			margin-top: 16px;
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
+		}
+
+		.tag {
+			display: inline-block;
+			padding: 4px 10px;
+			border-radius: 999px;
+			background: rgba(185, 199, 214, 0.38);
+			color: #5b5361;
+			font-size: 0.82rem;
+			letter-spacing: 0.03em;
+		}
+
+		/* Hidden details */
+		.item-details {
+			max-height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+		}
+
+		.timeline-item:hover .item-details,
+		.timeline-item.open .item-details {
+			max-height: 500px;
+			opacity: 1;
+			margin-top: 18px;
+		}
+
+		.detail-box {
+			padding-top: 18px;
+			border-top: 1px solid rgba(138, 111, 90, 0.16);
+		}
+
+		.detail-box p {
+			margin-bottom: 12px;
+			color: #4d4642;
+		}
+
+		.detail-box ul {
+			margin: 8px 0 14px 20px;
+		}
+
+		.detail-box li {
+			margin-bottom: 6px;
+		}
+
+		.item-links {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+			margin-top: 12px;
+		}
+
+		.item-links a {
+			padding: 7px 14px;
+			border-radius: 999px;
+			background: rgba(216, 167, 167, 0.28);
+			border: 1px solid rgba(138, 111, 90, 0.16);
+			font-size: 0.9rem;
+			color: #4a3b32;
+			transition: all 0.25s ease;
+		}
+
+		.item-links a:hover {
+			background: rgba(216, 167, 167, 0.52);
+			color: #7c6878;
+		}
+
+		.hint {
+			margin-top: 12px;
+			font-size: 0.86rem;
+			color: #9a8174;
+			font-style: italic;
+		}
+
+		/* Footer */
+		.cv-footer {
+			text-align: center;
+			padding: 40px 7vw;
+			color: #8a6f5a;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 760px) {
+			.cv-nav {
+				display: block;
+				text-align: center;
+			}
+
+			.cv-brand {
+				display: block;
+				margin-bottom: 14px;
+			}
+
+			.cv-links {
+				justify-content: center;
+			}
+
+			.cv-header {
+				padding-top: 45px;
+			}
+
+			.timeline {
+				padding-left: 26px;
+			}
+
+			.timeline-dot {
+				left: -29px;
+			}
+
+			.timeline-card {
+				padding: 21px 20px;
+			}
+
+			.item-title {
+				font-size: 1.25rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="cv-nav">
+		<a href="index.html" class="cv-brand">Rhoda Jiang</a>
+
+		<div class="cv-links">
+			<a href="index.html">Home</a>
+			<a href="cv.html" class="active">CV</a>
+			<a href="twocolumn1.html">Research</a>
+			<a href="onecolumn.html">Engagement</a>
+			<a href="threecolumn.html">Life</a>
+		</div>
+	</nav>
+
+	<!-- Header -->
+	<header class="cv-header">
+		<h1>Living CV</h1>
+		<p>
+			A growing timeline of my education, research, teaching, professional experience,
+			projects, talks, and collaborations. This page is designed as a living archive,
+			while my PDF CV remains a shorter formal version.
+		</p>
+
+		<div class="cv-actions">
+			<a href="Rhoda_Jiang_CV.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+				Download PDF CV
+			</a>
+			<a href="#timeline" class="cv-button">
+				View Timeline
+			</a>
+		</div>
+	</header>
+
+	<!-- Timeline -->
+	<main class="timeline-wrapper" id="timeline">
+		<div class="timeline">
+
+			<h2 class="year-label">2026</h2>
+
+			<!-- Item 1 -->
+			<article class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<div class="timeline-card">
+					<div class="item-date">May 2026</div>
+					<h3 class="item-title">Keynote Facilitator</h3>
+					<div class="item-place">University Of Edinburgh</div>
+
+					<p class="item-summary">
+						Supported the delivery of a keynote event by facilitating discussion
+						and contributing to the organisation of the event.
+					</p>
+
+					<div class="tags">
+						<span class="tag">Facilitation</span>
+						<span class="tag">Higher Education</span>
+						<span class="tag">Event Support</span>
+					</div>
+
+					<div class="item-details">
+						<div class="detail-box">
+							<p>
+								This experience involved supporting academic discussion, helping the event
+								run smoothly, and engaging with participants in a professional setting.
+							</p>
+
+							<ul>
+								<li>Facilitated discussion around keynote themes.</li>
+								<li>Supported event communication and participant engagement.</li>
+								<li>Contributed to the smooth delivery of the event.</li>
+							</ul>
+
+							<div class="item-links">
+								<a href="#">Event Page</a>
+								<a href="#">Reflection</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="hint">Hover or click to view details</div>
+				</div>
+			</article>
+
+			<!-- Item 2 -->
+			<article class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<div class="timeline-card">
+					<div class="item-date">2026</div>
+					<h3 class="item-title">PhD Research In Social Work</h3>
+					<div class="item-place">University Of Edinburgh</div>
+
+					<p class="item-summary">
+						Researching artificial intelligence, youth homelessness, social care,
+						and responsible innovation.
+					</p>
+
+					<div class="tags">
+						<span class="tag">PhD</span>
+						<span class="tag">Social Work</span>
+						<span class="tag">AI</span>
+						<span class="tag">Youth Homelessness</span>
+					</div>
+
+					<div class="item-details">
+						<div class="detail-box">
+							<p>
+								My PhD research explores how AI may be used in youth homelessness contexts,
+								while critically considering ethical, social, and practical implications.
+							</p>
+
+							<ul>
+								<li>Focus on AI and youth homelessness.</li>
+								<li>Interest in responsible and ethical technology.</li>
+								<li>Connection to social work, social care, and digital welfare.</li>
+							</ul>
+
+							<div class="item-links">
+								<a href="twocolumn1.html">Research Page</a>
+								<a href="#">Related Notes</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="hint">Hover or click to view details</div>
+				</div>
+			</article>
+
+			<h2 class="year-label">2025</h2>
+
+			<!-- Item 3 -->
+			<article class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<div class="timeline-card">
+					<div class="item-date">2025</div>
+					<h3 class="item-title">Tutor</h3>
+					<div class="item-place">Social Policy And Intervention</div>
+
+					<p class="item-summary">
+						Supported students through teaching, tutorial preparation, and assignment-related guidance.
+					</p>
+
+					<div class="tags">
+						<span class="tag">Teaching</span>
+						<span class="tag">Tutoring</span>
+						<span class="tag">Student Support</span>
+					</div>
+
+					<div class="item-details">
+						<div class="detail-box">
+							<p>
+								This role involved supporting student learning, explaining assignment expectations,
+								and helping students engage with course materials.
+							</p>
+
+							<ul>
+								<li>Provided tutorial support and academic guidance.</li>
+								<li>Responded to student questions about assignments.</li>
+								<li>Developed communication and teaching experience.</li>
+							</ul>
+
+							<div class="item-links">
+								<a href="#">Teaching Reflection</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="hint">Hover or click to view details</div>
+				</div>
+			</article>
+
+			<h2 class="year-label">2024</h2>
+
+			<!-- Item 4 -->
+			<article class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<div class="timeline-card">
+					<div class="item-date">2024</div>
+					<h3 class="item-title">Research Project Example</h3>
+					<div class="item-place">Organisation Or Institution Name</div>
+
+					<p class="item-summary">
+						A short one-sentence summary of this experience. Replace this with your real content.
+					</p>
+
+					<div class="tags">
+						<span class="tag">Research</span>
+						<span class="tag">Project</span>
+					</div>
+
+					<div class="item-details">
+						<div class="detail-box">
+							<p>
+								Add more detailed information here. You can describe what you did, what skills
+								you used, what you produced, and why it matters.
+							</p>
+
+							<ul>
+								<li>Responsibility or achievement one.</li>
+								<li>Responsibility or achievement two.</li>
+								<li>Output, report, presentation, or collaboration.</li>
+							</ul>
+
+							<div class="item-links">
+								<a href="#">Project Link</a>
+								<a href="#">Document</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="hint">Hover or click to view details</div>
+				</div>
+			</article>
+
+		</div>
+	</main>
+
+	<footer class="cv-footer">
+		&copy; Rhoda Jiang. Living CV archive.
+	</footer>
+
+	<script>
+		const timelineItems = document.querySelectorAll('.timeline-item');
+
+		timelineItems.forEach((item) => {
+			item.addEventListener('click', function () {
+				this.classList.toggle('open');
+			});
+		});
+	</script>
+
+</body>
+</html>
