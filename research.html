@@ -242,108 +242,88 @@
 			color: #7c6878;
 		}
 
-		/* Research Progress */
-		.progress-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 22px;
-		}
+		/* Research Progress Poster Gallery */
+.progress-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 26px;
+}
 
-		.progress-card {
-			cursor: pointer;
-			transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
-		}
+.progress-card {
+	border-radius: 28px;
+	background: rgba(255, 250, 242, 0.76);
+	border: 1px solid rgba(138, 111, 90, 0.14);
+	box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+	backdrop-filter: blur(8px);
+	overflow: hidden;
+	transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
 
-		.progress-card:hover {
-			transform: translateY(-5px);
-			background: rgba(255, 250, 242, 0.92);
-			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
-		}
+.progress-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+}
 
-		.progress-image img {
-			width: 100%;
-			height: 240px;
-			object-fit: cover;
-		}
+.poster-link {
+	display: block;
+	background: #fffaf2;
+	cursor: zoom-in;
+}
 
-		.progress-content {
-			padding: 24px;
-		}
+.progress-image img {
+	width: 100%;
+	height: 380px;
+	object-fit: contain;
+	background: #fffaf2;
+	padding: 12px;
+}
 
-		.progress-date {
-			font-size: 0.9rem;
-			color: #8a6f5a;
-			letter-spacing: 0.05em;
-			margin-bottom: 8px;
-		}
+.progress-content {
+	padding: 24px;
+}
 
-		.progress-content h3 {
-			font-size: 1.35rem;
-			font-weight: normal;
-			color: #4a3b32;
-			margin-bottom: 10px;
-			text-transform: capitalize;
-		}
+.progress-date {
+	font-size: 0.9rem;
+	color: #8a6f5a;
+	letter-spacing: 0.05em;
+	margin-bottom: 8px;
+}
 
-		.progress-summary {
-			color: #4d4642;
-			font-size: 0.98rem;
-		}
+.progress-content h3 {
+	font-size: 1.35rem;
+	font-weight: normal;
+	color: #4a3b32;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+}
 
-		.progress-details {
-			max-height: 0;
-			overflow: hidden;
-			opacity: 0;
-			transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
-		}
+.progress-summary {
+	color: #4d4642;
+	font-size: 0.98rem;
+	margin-bottom: 16px;
+}
 
-		.progress-card:hover .progress-details,
-		.progress-card.open .progress-details {
-			max-height: 460px;
-			opacity: 1;
-			margin-top: 18px;
-		}
+.poster-meta {
+	padding-top: 16px;
+	border-top: 1px solid rgba(138, 111, 90, 0.16);
+	color: #5f5551;
+	font-size: 0.95rem;
+}
 
-		.detail-line {
-			padding-top: 16px;
-			border-top: 1px solid rgba(138, 111, 90, 0.16);
-		}
+.poster-meta p {
+	margin-bottom: 8px;
+}
 
-		.detail-line ul {
-			margin: 10px 0 14px 20px;
-		}
-
-		.detail-line li {
-			margin-bottom: 6px;
-		}
-
-		.card-links {
-			margin-top: 14px;
-			display: flex;
-			gap: 10px;
-			flex-wrap: wrap;
-		}
-
-		.card-links a {
-			padding: 7px 13px;
-			border-radius: 999px;
-			background: rgba(216, 167, 167, 0.3);
-			border: 1px solid rgba(138, 111, 90, 0.14);
-			font-size: 0.88rem;
-			color: #4a3b32;
-		}
-
-		.card-links a:hover {
-			background: rgba(216, 167, 167, 0.55);
-			color: #7c6878;
-		}
-
-		.hint {
-			margin-top: 12px;
-			font-size: 0.84rem;
-			color: #9a8174;
-			font-style: italic;
-		}
+.view-poster {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 8px 15px;
+	border-radius: 999px;
+	background: rgba(216, 167, 167, 0.3);
+	border: 1px solid rgba(138, 111, 90, 0.14);
+	font-size: 0.9rem;
+	color: #4a3b32;
+}
 
 		/* Reflection */
 		.ideas-grid {
@@ -555,136 +535,96 @@
 			</div>
 		</section>
 
-		<!-- 3. Research Progress -->
-		<section class="research-section" id="research-progress">
-			<div class="section-heading">
-				<h2>Research Progress</h2>
-				<p>
-					Selected stages, materials, and outputs from my ongoing PhD research. Hover or click each card
-					to see more details.
-				</p>
-			</div>
+		<div class="progress-grid">
 
-			<div class="progress-grid">
+<!-- Progress Poster 1 -->
+<article class="progress-card">
+	<div class="progress-image">
+		<a href="images/research/progress-01.png" target="_blank" rel="noopener noreferrer" class="poster-link">
+			<img src="images/research/progress-01.png" alt="Research poster 1">
+		</a>
+	</div>
 
-				<!-- Progress Card 1 -->
-				<article class="progress-card">
-					<div class="progress-image">
-						<img src="images/research/progress-01.png" alt="Research progress 1">
-					</div>
+	<div class="progress-content">
+		<div class="progress-date">May 2026</div>
+		<h3>Developing The Research Focus</h3>
 
-					<div class="progress-content">
-						<div class="progress-date">Stage One</div>
-						<h3>Developing The Research Focus</h3>
+		<p class="progress-summary">
+			This poster presents the early development of my PhD research focus on AI, youth homelessness, and social care.
+		</p>
 
-						<p class="progress-summary">
-							Clarifying the central research questions around AI, youth homelessness,
-							and social care.
-						</p>
+		<div class="poster-meta">
+			<p><strong>Date:</strong> May 2026</p>
+			<p><strong>Event:</strong> Conference / Workshop / Research Sharing</p>
+			<p><strong>Format:</strong> Poster presentation</p>
+			<p><strong>Summary:</strong> This poster discusses how my research questions are being shaped through literature, ethics, and practice concerns.</p>
 
-						<div class="progress-details">
-							<div class="detail-line">
-								<p>
-									This stage focuses on understanding the research landscape and identifying
-									the key conceptual, ethical, and practical tensions.
-								</p>
+			<a href="images/research/progress-01.png" target="_blank" rel="noopener noreferrer" class="view-poster">
+				View Full Poster
+			</a>
+		</div>
+	</div>
+</article>
 
-								<ul>
-									<li>Reviewed literature on youth homelessness and digital welfare.</li>
-									<li>Mapped early questions about AI and social care.</li>
-									<li>Identified ethical issues around risk, trust, and decision-making.</li>
-								</ul>
+<!-- Progress Poster 2 -->
+<article class="progress-card">
+	<div class="progress-image">
+		<a href="images/research/progress-02.png" target="_blank" rel="noopener noreferrer" class="poster-link">
+			<img src="images/research/progress-02.png" alt="Research poster 2">
+		</a>
+	</div>
 
-								<div class="card-links">
-									<a href="#">Notes</a>
-									<a href="#">Slides</a>
-								</div>
-							</div>
-						</div>
+	<div class="progress-content">
+		<div class="progress-date">2026</div>
+		<h3>Building A Conceptual Framework</h3>
 
-						<div class="hint">Hover or click to view details</div>
-					</div>
-				</article>
+		<p class="progress-summary">
+			This poster explores the conceptual links between social work, responsible AI, digital inequality, and support systems.
+		</p>
 
-				<!-- Progress Card 2 -->
-				<article class="progress-card">
-					<div class="progress-image">
-						<img src="images/research/progress-02.png" alt="Research progress 2">
-					</div>
+		<div class="poster-meta">
+			<p><strong>Date:</strong> 2026</p>
+			<p><strong>Event:</strong> Research seminar / academic discussion</p>
+			<p><strong>Format:</strong> Poster presentation</p>
+			<p><strong>Summary:</strong> This poster explains how different concepts in my PhD project connect with one another.</p>
 
-					<div class="progress-content">
-						<div class="progress-date">Stage Two</div>
-						<h3>Building A Conceptual Framework</h3>
+			<a href="images/research/progress-02.png" target="_blank" rel="noopener noreferrer" class="view-poster">
+				View Full Poster
+			</a>
+		</div>
+	</div>
+</article>
 
-						<p class="progress-summary">
-							Connecting social work, responsible AI, digital inequality, and support systems.
-						</p>
+<!-- Progress Poster 3 -->
+<article class="progress-card">
+	<div class="progress-image">
+		<a href="images/research/progress-03.png" target="_blank" rel="noopener noreferrer" class="poster-link">
+			<img src="images/research/progress-03.png" alt="Research poster 3">
+		</a>
+	</div>
 
-						<div class="progress-details">
-							<div class="detail-line">
-								<p>
-									This stage develops a more structured way of thinking about the relationship
-									between technology and social support.
-								</p>
+	<div class="progress-content">
+		<div class="progress-date">2026</div>
+		<h3>Sharing And Refining Ideas</h3>
 
-								<ul>
-									<li>Explored responsible AI and social care literature.</li>
-									<li>Mapped stakeholders, risks, and possible benefits.</li>
-									<li>Connected theoretical concepts with practical service contexts.</li>
-								</ul>
+		<p class="progress-summary">
+			This poster records how I present, test, and refine my emerging research ideas through discussion and feedback.
+		</p>
 
-								<div class="card-links">
-									<a href="#">Concept Map</a>
-									<a href="#">Video Link</a>
-								</div>
-							</div>
-						</div>
+		<div class="poster-meta">
+			<p><strong>Date:</strong> 2026</p>
+			<p><strong>Event:</strong> Conference / presentation / peer discussion</p>
+			<p><strong>Format:</strong> Poster presentation</p>
+			<p><strong>Summary:</strong> This poster focuses on how feedback helps develop the direction and framing of my research.</p>
 
-						<div class="hint">Hover or click to view details</div>
-					</div>
-				</article>
+			<a href="images/research/progress-03.png" target="_blank" rel="noopener noreferrer" class="view-poster">
+				View Full Poster
+			</a>
+		</div>
+	</div>
+</article>
 
-				<!-- Progress Card 3 -->
-				<article class="progress-card">
-					<div class="progress-image">
-						<img src="images/research/progress-03.png" alt="Research progress 3">
-					</div>
-
-					<div class="progress-content">
-						<div class="progress-date">Stage Three</div>
-						<h3>Sharing And Refining Ideas</h3>
-
-						<p class="progress-summary">
-							Presenting emerging ideas through discussions, events, conferences, or informal feedback.
-						</p>
-
-						<div class="progress-details">
-							<div class="detail-line">
-								<p>
-									This stage focuses on communicating early research ideas and using feedback
-									to refine the direction of the project.
-								</p>
-
-								<ul>
-									<li>Prepared visual materials and short research summaries.</li>
-									<li>Discussed emerging questions with peers and academic audiences.</li>
-									<li>Refined research framing based on feedback.</li>
-								</ul>
-
-								<div class="card-links">
-									<a href="#">Conference</a>
-									<a href="#">Poster</a>
-									<a href="#">Reflection</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="hint">Hover or click to view details</div>
-					</div>
-				</article>
-
-			</div>
-		</section>
+</div>
 
 		<!-- 4. Reflection & New Ideas -->
 <section class="research-section" id="reflection">
@@ -784,15 +724,6 @@
 		&copy; Rhoda Jiang. Research archive.
 	</footer>
 
-	<script>
-		const progressCards = document.querySelectorAll('.progress-card');
-
-		progressCards.forEach((card) => {
-			card.addEventListener('click', function () {
-				this.classList.toggle('open');
-			});
-		});
-	</script>
 
 </body>
 </html>
