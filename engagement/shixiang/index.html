@@ -590,6 +590,57 @@
       for (let i = 0; i < normalized.length; i++) seed += normalized.charCodeAt(i);
       return sayings[seed % sayings.length];
     }
+
+    const AI_ENDPOINT = "https://raspy-poetry-c189.plie2play.workers.dev";
+
+function normalizeAIResult(result) {
+  const cleanedQuestion = String(result.question || "").replace(/^今日一问[:：]\s*/u, "");
+
+  return {
+    [lang]: {
+      text: String(result.text || ""),
+      source: String(result.source || i18n[lang].source),
+      lens: String(result.lens || ""),
+      question: cleanedQuestion
+    }
+  };
+}
+
+async function askWithAI(q) {
+  elements.askButton.disabled = true;
+  elements.askButton.textContent = lang === "zh" ? "正在照见" : "Seeing";
+
+  try {
+    const response = await fetch(AI_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        question: q,
+        language: lang
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error("AI request failed");
+    }
+
+    const result = await response.json();
+    renderAnswer(normalizeAIResult(result), q);
+  } catch (error) {
+    showNotice(
+      lang === "zh"
+        ? "云路暂时不通，先以本地真言回应你。"
+        : "The cloud path is unavailable. A local line will answer for now."
+    );
+
+    renderAnswer(pickSaying(q), q);
+  } finally {
+    elements.askButton.disabled = false;
+    elements.askButton.textContent = i18n[lang].ask;
+  }
+}
     
 
     function getLocalizedResult(result) {
@@ -649,17 +700,17 @@
     }
 
     elements.askButton.addEventListener("click", () => {
-      const q = elements.question.value.trim();
-      if (!q) return;
+  const q = elements.question.value.trim();
+  if (!q) return;
 
-      if (getCount() >= 3) {
-        showNotice(i18n[lang].limit);
-        return;
-      }
+  if (getCount() >= 3) {
+    showNotice(i18n[lang].limit);
+    return;
+  }
 
-      addCount();
-      pickSaying(q)
-    });
+  addCount();
+  askWithAI(q);
+});
 
     elements.question.addEventListener("keydown", (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
