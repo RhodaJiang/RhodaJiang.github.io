@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>识相 ShiXiang｜答案之书</title>
+  <meta name="description" content="识相 ShiXiang：一本不预测未来的双语答案之书。Ask once. See clearly. Hold lightly." />
+  <meta property="og:title" content="识相 ShiXiang｜答案之书" />
+  <meta property="og:description" content="不替你决定，不替你预测。只是陪你看见：此刻的心，住在哪里。" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --card: rgba(255,255,255,0.84);
+      --ink: #24211d;
+      --muted: #7a746d;
+      --light: #ede9e3;
+      --softer: #f4f1ec;
+      --dark: #24211d;
+      --white: #fff;
+      --shadow: 0 20px 60px rgba(36, 33, 29, 0.08);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(232, 222, 207, 0.75), transparent 30%),
+        radial-gradient(circle at 80% 90%, rgba(224, 214, 201, 0.55), transparent 32%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .app { width: min(100%, 740px); }
+
+    .back-link {
+      display: inline-flex;
+      margin: 0 0 14px 4px;
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover { color: var(--ink); }
+
+    .card {
+      border: 1px solid rgba(210, 202, 190, 0.9);
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: clamp(24px, 5vw, 44px);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 42px;
+    }
+
+    .brand { display: flex; gap: 14px; align-items: center; }
+
+    .seal {
+      width: 46px;
+      height: 46px;
+      border-radius: 18px;
+      background: var(--dark);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    .tagline { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+
+    .top-tools {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .language-toggle {
+      display: inline-flex;
+      padding: 4px;
+      border-radius: 999px;
+      background: var(--softer);
+      border: 1px solid rgba(210, 202, 190, 0.9);
+    }
+
+    .language-toggle button {
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .language-toggle button.active {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--softer);
+      color: var(--muted);
+      padding: 8px 12px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .prompt {
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: clamp(24px, 4vw, 32px);
+      line-height: 1.5;
+      margin: 0 0 22px;
+      font-weight: 500;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 156px;
+      resize: vertical;
+      border: 1px solid var(--light);
+      background: rgba(250, 250, 247, 0.9);
+      border-radius: 24px;
+      padding: 18px 18px;
+      font: inherit;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink);
+      outline: none;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    textarea:focus {
+      border-color: #cfc7bb;
+      box-shadow: 0 0 0 4px rgba(207, 199, 187, 0.24);
+    }
+
+    textarea::placeholder { color: #aaa39a; }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hint { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; }
+
+    button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      transition: transform 0.15s, background 0.2s, opacity 0.2s;
+    }
+
+    button:active { transform: translateY(1px); }
+
+    .primary {
+      border-radius: 999px;
+      background: var(--dark);
+      color: var(--white);
+      padding: 13px 22px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .primary:hover { background: #423b35; }
+    .primary:disabled { opacity: 0.42; cursor: not-allowed; }
+
+    .notice {
+      display: none;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      background: var(--softer);
+      color: var(--muted);
+      padding: 12px 14px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .notice.show { display: block; }
+
+    .answer { display: none; }
+    .answer.show { display: block; animation: rise 0.38s ease both; }
+    .ask.hide { display: none; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .user-question {
+      border-radius: 22px;
+      background: var(--softer);
+      color: #625b53;
+      padding: 15px 18px;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+
+    .sutra {
+      text-align: center;
+      padding: 34px 0;
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+      margin-bottom: 28px;
+    }
+
+    .sutra-text {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: clamp(28px, 5.4vw, 42px);
+      line-height: 1.65;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    .source { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+
+    .section-label {
+      color: #aaa39a;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+    }
+
+    .lens {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #4b4640;
+      margin: 0 0 26px;
+    }
+
+    .today {
+      border-radius: 24px;
+      background: var(--dark);
+      color: var(--white);
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    .today small {
+      display: block;
+      color: #cfc7bb;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .today p {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 22px;
+      line-height: 1.65;
+    }
+
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+    .ghost {
+      border-radius: 999px;
+      border: 1px solid var(--light);
+      background: transparent;
+      color: var(--ink);
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+
+    .ghost:hover { background: var(--softer); }
+    .push { margin-left: auto; }
+
+    .foot { text-align: center; color: #aaa39a; font-size: 12px; margin-top: 18px; line-height: 1.7; }
+
+    @media (max-width: 560px) {
+      body { align-items: flex-start; padding-top: 18px; }
+      .top { align-items: flex-start; margin-bottom: 34px; }
+      .brand { align-items: flex-start; }
+      .top-tools { align-items: flex-end; }
+      .pill { display: none; }
+      .push { margin-left: 0; }
+      .actions button { flex: 1 1 auto; }
+      .language-toggle button { padding: 6px 9px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <a class="back-link" href="../../engagement.html" id="backLink">← 返回 Engagement</a>
+
+    <section class="card" aria-label="识相答案之书">
+      <header class="top">
+        <div class="brand">
+          <div class="seal" aria-hidden="true">相</div>
+          <div>
+            <h1 id="brandTitle">识相</h1>
+            <p class="tagline" id="tagline">问一句。看清楚。轻轻放。</p>
+          </div>
+        </div>
+
+        <div class="top-tools">
+          <div class="language-toggle" aria-label="Language switcher">
+            <button id="langZh" type="button">中文</button>
+            <button id="langEn" type="button">EN</button>
+          </div>
+          <span class="pill" id="countPill">今日余 3 问</span>
+        </div>
+      </header>
+
+      <div class="notice" id="notice"></div>
+
+      <section class="ask" id="askPanel">
+        <p class="prompt" id="promptText">此刻，你想问什么？</p>
+        <textarea id="question" maxlength="180" placeholder="例如：我会成功吗？他还爱我吗？我为什么放不下？"></textarea>
+        <div class="row">
+          <p class="hint" id="hintText">识相不预测未来，只照见你此刻住在哪一相。</p>
+          <button class="primary" id="askButton">请一句</button>
+        </div>
+      </section>
+
+      <section class="answer" id="answerPanel" aria-live="polite">
+        <div class="user-question" id="userQuestion"></div>
+        <div class="sutra">
+          <p class="sutra-text" id="sutraText"></p>
+          <p class="source" id="sourceText">——《金刚经》</p>
+        </div>
+
+        <p class="section-label" id="lensLabel">此相何解</p>
+        <p class="lens" id="lensText"></p>
+
+        <div class="today">
+          <small id="todayLabel">今日一问</small>
+          <p id="todayQuestion"></p>
+        </div>
+
+        <div class="actions">
+          <button class="ghost" id="copyButton">复制</button>
+          <button class="ghost" id="shareButton">分享</button>
+          <button class="ghost" id="againButton">再问一句</button>
+          <button class="primary push" id="closeButton">合上此书</button>
+        </div>
+      </section>
+    </section>
+
+    <p class="foot" id="footerText">不替你决定，不替你预测。只是陪你看见：此刻的心，住在哪里。</p>
+  </main>
+
+  <script>
+    const i18n = {
+      zh: {
+        htmlLang: "zh-CN",
+        title: "识相",
+        tagline: "问一句。看清楚。轻轻放。",
+        back: "← 返回 Engagement",
+        count: (n) => `今日余 ${n} 问`,
+        prompt: "此刻，你想问什么？",
+        placeholder: "例如：我会成功吗？他还爱我吗？我为什么放不下？",
+        hint: "识相不预测未来，只照见你此刻住在哪一相。",
+        ask: "请一句",
+        asked: (q) => `你问：${q}`,
+        lensLabel: "此相何解",
+        todayLabel: "今日一问",
+        copy: "复制",
+        share: "分享",
+        again: "再问一句",
+        close: "合上此书",
+        footer: "不替你决定，不替你预测。只是陪你看见：此刻的心，住在哪里。",
+        limit: "今日三问已足够。若同一个问题反复出现，也许今日要看的不是答案，而是这个反复本身。",
+        copied: "已复制。带着它离开一会儿。",
+        shareCopied: "当前浏览器不支持直接分享，已复制分享文字。",
+        source: "《金刚经》",
+        shareTitle: "识相",
+        sharePrefix: "我在「识相」问了一句：",
+        copiedPrefix: "识相｜"
+      },
+      en: {
+        htmlLang: "en",
+        title: "ShiXiang",
+        tagline: "Ask once. See clearly. Hold lightly.",
+        back: "← Back to Engagement",
+        count: (n) => `${n} questions left today`,
+        prompt: "What is weighing on your mind?",
+        placeholder: "For example: Will I succeed? Why can’t I let go? What am I holding onto?",
+        hint: "ShiXiang does not predict the future; it helps you see what the mind is holding onto.",
+        ask: "Ask the book",
+        asked: (q) => `You asked: ${q}`,
+        lensLabel: "What this reveals",
+        todayLabel: "A question to carry",
+        copy: "Copy",
+        share: "Share",
+        again: "Ask again",
+        close: "Close the book",
+        footer: "It does not decide for you or predict for you. It only helps you see where the mind is abiding.",
+        limit: "Three questions are enough for today. If the same question keeps returning, perhaps the thing to notice is not the answer, but the return itself.",
+        copied: "Copied. Carry it with you, then step away for a moment.",
+        shareCopied: "Direct sharing is not supported in this browser, so the text has been copied instead.",
+        source: "The Diamond Sutra",
+        shareTitle: "ShiXiang",
+        sharePrefix: "I asked ShiXiang: ",
+        copiedPrefix: "ShiXiang | "
+      }
+    };
+
+    const sayings = [
+      {
+        id: "wuzhu",
+        keywords: ["成功", "失败", "结果", "未来", "坚持", "放弃", "焦虑", "成", "赢", "输", "考试", "事业", "创业", "succeed", "success", "fail", "failure", "outcome", "result", "future", "career", "exam", "business", "give up", "continue"],
+        zh: {
+          text: "应无所住而生其心。",
+          source: "《金刚经》",
+          lens: "你正在向未来索要一个确定的结果。但心若住在成功上，就会被成功牵引；心若住在失败上，就会被失败恐吓。不住，不是放弃行动，而是不把自己交给结果定义。",
+          question: "如果不向未来索要保证，你今天仍愿意做的一件小事是什么？"
+        },
+        en: {
+          text: "Let the mind arise without abiding anywhere.",
+          source: "The Diamond Sutra",
+          lens: "You are asking the future to give you certainty. But when the mind abides in success, it is pulled by success; when it abides in failure, it is frightened by failure. Not abiding does not mean giving up. It means acting without letting the outcome define who you are.",
+          question: "If you stopped asking the future for a guarantee, what is one small thing you would still do today?"
+        }
+      },
+      {
+        id: "past",
+        keywords: ["过去", "后悔", "以前", "放不下", "伤害", "遗憾", "想起", "回忆", "曾经", "past", "regret", "memory", "hurt", "wounded", "cannot let go", "used to", "back then"],
+        zh: {
+          text: "过去心不可得。",
+          source: "《金刚经》",
+          lens: "过去发生过，但过去不能被重新抓住。此刻真正困住你的，可能不是过去本身，而是你正在反复把过去带回现在。",
+          question: "你现在抓住的，是过去的事实，还是你对过去的解释？"
+        },
+        en: {
+          text: "The past mind cannot be grasped.",
+          source: "The Diamond Sutra",
+          lens: "The past happened, but it cannot be held again as a living thing. What binds you now may not be the past itself, but the way the past is being carried back into this moment.",
+          question: "What are you holding onto now: the fact of the past, or your interpretation of it?"
+        }
+      },
+      {
+        id: "present",
+        keywords: ["现在", "痛苦", "难受", "崩溃", "害怕", "孤独", "烦", "累", "emo", "焦虑", "不安", "now", "pain", "hurt", "anxious", "lonely", "tired", "afraid", "scared", "overwhelmed", "sad"],
+        zh: {
+          text: "现在心不可得。",
+          source: "《金刚经》",
+          lens: "此刻的感受很真实，但它不是永恒的真相。不要把一个正在流动的心念，误认成完整的自己。",
+          question: "如果只把此刻的情绪看作一阵云，而不是整个天空，你会怎样对待自己？"
+        },
+        en: {
+          text: "The present mind cannot be grasped.",
+          source: "The Diamond Sutra",
+          lens: "What you feel now is real, but it is not a permanent truth. Do not mistake a passing state of mind for the whole of who you are.",
+          question: "If this feeling were a cloud rather than the whole sky, how would you treat yourself now?"
+        }
+      },
+      {
+        id: "future",
+        keywords: ["以后", "未来", "会不会", "怎么办", "明天", "老了", "一辈子", "担心", "害怕", "future", "will i", "what if", "tomorrow", "worry", "worried", "forever", "alone forever", "later"],
+        zh: {
+          text: "未来心不可得。",
+          source: "《金刚经》",
+          lens: "未来尚未成为现实。你现在的苦，可能来自把一个尚未发生的影像，当成了已经确定的命运。",
+          question: "此刻有什么事情，是不用知道未来也可以先做的？"
+        },
+        en: {
+          text: "The future mind cannot be grasped.",
+          source: "The Diamond Sutra",
+          lens: "The future has not yet become real. Some of your suffering may come from treating an image that has not happened as if it were already your fate.",
+          question: "What can you do now without needing to know the future first?"
+        }
+      },
+      {
+        id: "xiang",
+        keywords: ["爱", "关系", "他", "她", "喜欢", "分手", "复合", "伴侣", "朋友", "灵魂伴侣", "在乎", "回消息", "想我", "love", "relationship", "partner", "friend", "breakup", "message", "reply", "miss me", "soulmate", "care about me"],
+        zh: {
+          text: "凡所有相，皆是虚妄。若见诸相非相，即见如来。",
+          source: "《金刚经》",
+          lens: "你看见的关系、角色、承诺、甜蜜和失落，都是“相”。它们不是没有意义，但也不是可以永远抓住的实体。看见它们的流动，才不会被它们困住。",
+          question: "你此刻最想从对方那里确认什么？如果没有这个确认，你还在吗？"
+        },
+        en: {
+          text: "All appearances are illusory; seeing appearances as no fixed appearances is seeing clearly.",
+          source: "The Diamond Sutra",
+          lens: "The relationship, the role, the promise, the sweetness, and the loss you see are all appearances. They are not meaningless, but they are not fixed things that can be held forever. Seeing their movement is what keeps you from being trapped by them.",
+          question: "What are you trying to have confirmed by the other person? If that confirmation does not arrive, are you still here?"
+        }
+      },
+      {
+        id: "no-self",
+        keywords: ["我是不是", "不够好", "失败", "自卑", "别人", "比较", "讨厌自己", "价值", "认可", "评价", "not good enough", "am i", "failure", "compare", "others", "hate myself", "worth", "validation", "judged", "identity"],
+        zh: {
+          text: "无我相，无人相，无众生相，无寿者相。",
+          source: "《金刚经》",
+          lens: "你正在把自己固定成某个标签，也把别人固定成某个评判者。但这些身份、评价和比较，都不是完整的你。",
+          question: "如果暂时不把自己命名为成功或失败，你还能怎样描述此刻的自己？"
+        },
+        en: {
+          text: "No fixed mark of self, of other, of beings, or of a life-span.",
+          source: "The Diamond Sutra",
+          lens: "You may be fixing yourself into a label and fixing others into judges. But these identities, judgments, and comparisons are not the whole of you.",
+          question: "If you did not name yourself as a success or failure for a moment, how else could you describe yourself now?"
+        }
+      }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const elements = {
+      backLink: $("backLink"),
+      brandTitle: $("brandTitle"),
+      tagline: $("tagline"),
+      countPill: $("countPill"),
+      notice: $("notice"),
+      askPanel: $("askPanel"),
+      answerPanel: $("answerPanel"),
+      promptText: $("promptText"),
+      question: $("question"),
+      hintText: $("hintText"),
+      askButton: $("askButton"),
+      userQuestion: $("userQuestion"),
+      sutraText: $("sutraText"),
+      sourceText: $("sourceText"),
+      lensLabel: $("lensLabel"),
+      lensText: $("lensText"),
+      todayLabel: $("todayLabel"),
+      todayQuestion: $("todayQuestion"),
+      copyButton: $("copyButton"),
+      shareButton: $("shareButton"),
+      againButton: $("againButton"),
+      closeButton: $("closeButton"),
+      footerText: $("footerText"),
+      langZh: $("langZh"),
+      langEn: $("langEn")
+    };
+
+    let lang = localStorage.getItem("shixiang-lang") || (navigator.language && navigator.language.startsWith("zh") ? "zh" : "en");
+    let currentResult = null;
+    let currentQuestion = "";
+
+    function todayKey() { return "shixiang-count-" + new Date().toDateString(); }
+    function getCount() { return Number(localStorage.getItem(todayKey()) || 0); }
+    function addCount() { localStorage.setItem(todayKey(), String(getCount() + 1)); renderCount(); }
+    function leftCount() { return Math.max(0, 3 - getCount()); }
+
+    function renderCount() {
+      elements.countPill.textContent = i18n[lang].count(leftCount());
+    }
+
+    function showNotice(text) {
+      elements.notice.textContent = text;
+      elements.notice.classList.add("show");
+      window.setTimeout(() => elements.notice.classList.remove("show"), 2800);
+    }
+
+    function pickSaying(input) {
+      const normalized = input.trim().toLowerCase();
+      const scored = sayings.map((s) => {
+        const score = s.keywords.reduce((sum, k) => normalized.includes(k.toLowerCase()) ? sum + 1 : sum, 0);
+        return { ...s, score };
+      });
+      const best = scored.sort((a, b) => b.score - a.score)[0];
+      if (best.score > 0) return best;
+
+      let seed = 0;
+      for (let i = 0; i < normalized.length; i++) seed += normalized.charCodeAt(i);
+      return sayings[seed % sayings.length];
+    }
+
+    function getLocalizedResult(result) {
+      if (!result) return null;
+      return result[lang] || result.zh;
+    }
+
+    function renderLanguage() {
+      const t = i18n[lang];
+      document.documentElement.lang = t.htmlLang;
+      elements.brandTitle.textContent = t.title;
+      elements.tagline.textContent = t.tagline;
+      elements.backLink.textContent = t.back;
+      elements.promptText.textContent = t.prompt;
+      elements.question.placeholder = t.placeholder;
+      elements.hintText.textContent = t.hint;
+      elements.askButton.textContent = t.ask;
+      elements.lensLabel.textContent = t.lensLabel;
+      elements.todayLabel.textContent = t.todayLabel;
+      elements.copyButton.textContent = t.copy;
+      elements.shareButton.textContent = t.share;
+      elements.againButton.textContent = t.again;
+      elements.closeButton.textContent = t.close;
+      elements.footerText.textContent = t.footer;
+      elements.langZh.classList.toggle("active", lang === "zh");
+      elements.langEn.classList.toggle("active", lang === "en");
+      renderCount();
+
+      if (currentResult) {
+        renderAnswer(currentResult, currentQuestion, false);
+      }
+    }
+
+    function renderAnswer(result, q, showPanel = true) {
+      currentResult = result;
+      currentQuestion = q;
+      const r = getLocalizedResult(result);
+      const t = i18n[lang];
+
+      elements.userQuestion.textContent = t.asked(q);
+      elements.sutraText.textContent = r.text;
+      elements.sourceText.textContent = "—— " + (r.source || t.source);
+      elements.lensText.textContent = r.lens;
+      elements.todayQuestion.textContent = r.question;
+
+      if (showPanel) {
+        elements.askPanel.classList.add("hide");
+        elements.answerPanel.classList.add("show");
+      }
+    }
+
+    function resetAsk(clearText = true) {
+      elements.answerPanel.classList.remove("show");
+      elements.askPanel.classList.remove("hide");
+      if (clearText) elements.question.value = "";
+      elements.question.focus();
+    }
+
+    elements.askButton.addEventListener("click", () => {
+      const q = elements.question.value.trim();
+      if (!q) return;
+
+      if (getCount() >= 3) {
+        showNotice(i18n[lang].limit);
+        return;
+      }
+
+      addCount();
+      renderAnswer(pickSaying(q), q);
+    });
+
+    elements.question.addEventListener("keydown", (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+        elements.askButton.click();
+      }
+    });
+
+    elements.copyButton.addEventListener("click", async () => {
+      if (!currentResult) return;
+      const r = getLocalizedResult(currentResult);
+      const t = i18n[lang];
+      const content = `${t.copiedPrefix}${currentQuestion}\n\n${r.text}\n——${r.source || t.source}\n\n${r.lens}\n\n${t.todayLabel}: ${r.question}`;
+      await navigator.clipboard.writeText(content);
+      showNotice(t.copied);
+    });
+
+    elements.shareButton.addEventListener("click", async () => {
+      if (!currentResult) return;
+      const r = getLocalizedResult(currentResult);
+      const t = i18n[lang];
+      const shareText = `${t.sharePrefix}${currentQuestion}\n\n${r.text}\n\n${t.todayLabel}: ${r.question}`;
+      if (navigator.share) {
+        await navigator.share({ title: t.shareTitle, text: shareText });
+      } else {
+        await navigator.clipboard.writeText(shareText);
+        showNotice(t.shareCopied);
+      }
+    });
+
+    elements.againButton.addEventListener("click", () => resetAsk(true));
+    elements.closeButton.addEventListener("click", () => resetAsk(false));
+
+    elements.langZh.addEventListener("click", () => {
+      lang = "zh";
+      localStorage.setItem("shixiang-lang", lang);
+      renderLanguage();
+    });
+
+    elements.langEn.addEventListener("click", () => {
+      lang = "en";
+      localStorage.setItem("shixiang-lang", lang);
+      renderLanguage();
+    });
+
+    renderLanguage();
+  </script>
+</body>
+</html>
