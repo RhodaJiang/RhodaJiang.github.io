@@ -315,7 +315,7 @@
 </head>
 <body>
   <main class="app">
-    <a class="back-link" href="../../shixiang/" id="backLink">← 返回 Engagement</a>
+    <a class="back-link" href="/engagement/" id="backLink">← 返回 Engagement</a>
 
     <section class="card" aria-label="识相答案之书">
       <header class="top">
@@ -590,43 +590,7 @@
       for (let i = 0; i < normalized.length; i++) seed += normalized.charCodeAt(i);
       return sayings[seed % sayings.length];
     }
-    const AI_ENDPOINT = "https://raspy-poetry-c189.plie2play.workers.dev";
-
-async function askWithAI(q) {
-  askButton.disabled = true;
-  askButton.textContent = currentLang === "zh" ? "正在照见" : "Seeing";
-
-  try {
-    const response = await fetch(AI_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        question: q,
-        language: currentLang
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error("AI request failed");
-    }
-
-    const result = await response.json();
-    renderAnswer(result, q);
-  } catch (error) {
-    showNotice(
-      currentLang === "zh"
-        ? "云路暂时不通，先以本地真言回应你。"
-        : "The cloud path is unavailable. A local line will answer for now."
-    );
-
-    renderAnswer(pickSaying(q), q);
-  } finally {
-    askButton.disabled = false;
-    askButton.textContent = currentLang === "zh" ? "请一句" : "Ask the book";
-  }
-}
+    
 
     function getLocalizedResult(result) {
       if (!result) return null;
