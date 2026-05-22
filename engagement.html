@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engagement - Rhoda Jiang</title>
+  <meta name="description" content="Two public-facing prototypes by Rhoda Jiang: ShiXiang and a trauma-informed AI evaluation pilot." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(234, 208, 207, 0.55), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(185, 199, 214, 0.45), transparent 34%),
+        linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      color: #3f3a37;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .engagement-nav {
+      width: 100%;
+      padding: 24px 7vw 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .engagement-brand {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #4a3b32;
+    }
+
+    .engagement-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .engagement-links a {
+      padding: 8px 18px;
+      border: 1px solid rgba(74, 59, 50, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 250, 242, 0.45);
+      font-size: 0.95rem;
+      color: #4a3b32;
+      transition: all 0.25s ease;
+    }
+
+    .engagement-links a:hover,
+    .engagement-links a.active {
+      background: rgba(234, 208, 207, 0.72);
+      color: #7c6878;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 7vw 90px;
+    }
+
+    .hero {
+      max-width: 930px;
+      margin-bottom: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: rgba(185, 199, 214, 0.38);
+      color: #5b5361;
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      border: 1px solid rgba(138, 111, 90, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.95;
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      color: #4a3b32;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 820px;
+      font-size: 1.18rem;
+      color: #6f5f59;
+      margin-bottom: 28px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: rgba(255, 250, 242, 0.62);
+      color: #5b5361;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+      border: 1px solid rgba(138, 111, 90, 0.12);
+    }
+
+    .intro-panel {
+      padding: 34px;
+      border-radius: 30px;
+      background: rgba(255, 250, 242, 0.76);
+      border: 1px solid rgba(138, 111, 90, 0.14);
+      box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+      backdrop-filter: blur(8px);
+      margin-bottom: 34px;
+    }
+
+    .intro-panel p {
+      max-width: 900px;
+      color: #4d4642;
+      margin-bottom: 14px;
+    }
+
+    .section-heading { margin: 58px 0 24px; }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: normal;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      color: #4a3b32;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      max-width: 780px;
+      color: #6f5f59;
+      font-size: 1.05rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      min-height: 500px;
+      border-radius: 32px;
+      background: rgba(255, 250, 242, 0.76);
+      border: 1px solid rgba(138, 111, 90, 0.14);
+      box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 250, 242, 0.94);
+      box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+    }
+
+    .product-visual {
+      min-height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(216, 167, 167, 0.46), transparent 34%),
+        radial-gradient(circle at 75% 80%, rgba(185, 199, 214, 0.42), transparent 34%),
+        rgba(255, 250, 242, 0.45);
+      border-bottom: 1px solid rgba(138, 111, 90, 0.12);
+    }
+
+    .seal {
+      width: 96px;
+      height: 96px;
+      border-radius: 34px;
+      display: grid;
+      place-items: center;
+      background: #4a3b32;
+      color: #fffaf2;
+      font-size: 3.2rem;
+      line-height: 1;
+      box-shadow: 0 18px 36px rgba(74, 59, 50, 0.16);
+    }
+
+    .table-icon {
+      width: min(100%, 360px);
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 250, 242, 0.82);
+      border: 1px solid rgba(138, 111, 90, 0.14);
+      box-shadow: 0 18px 36px rgba(74, 59, 50, 0.08);
+    }
+
+    .mini-row {
+      display: grid;
+      grid-template-columns: 0.72fr 1.2fr 1.55fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .mini-cell {
+      min-height: 18px;
+      border-radius: 7px;
+      background: rgba(185, 199, 214, 0.35);
+    }
+
+    .mini-row:nth-child(2n) .mini-cell { background: rgba(216, 167, 167, 0.28); }
+
+    .product-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-label {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 13px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(185, 199, 214, 0.38);
+      color: #5b5361;
+      font-size: 0.82rem;
+    }
+
+    .product-content h3 {
+      font-size: 1.65rem;
+      font-weight: normal;
+      color: #4a3b32;
+      margin-bottom: 12px;
+    }
+
+    .product-content p {
+      color: #4d4642;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .product-list {
+      margin-left: 18px;
+      color: #5f5551;
+      font-size: 0.96rem;
+      margin-bottom: 24px;
+    }
+
+    .product-list li { margin-bottom: 7px; }
+
+    .card-bottom {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .soft-button {
+      display: inline-block;
+      padding: 9px 17px;
+      border-radius: 999px;
+      background: rgba(216, 167, 167, 0.3);
+      border: 1px solid rgba(138, 111, 90, 0.14);
+      font-size: 0.92rem;
+      color: #4a3b32;
+      transition: all 0.25s ease;
+    }
+
+    .product-card:hover .soft-button {
+      background: rgba(216, 167, 167, 0.55);
+      color: #7c6878;
+    }
+
+    .note {
+      margin-top: 30px;
+      padding: 26px 30px;
+      border-radius: 28px;
+      background: rgba(255, 250, 242, 0.62);
+      border: 1px solid rgba(138, 111, 90, 0.12);
+      color: #6f5f59;
+    }
+
+    .engagement-footer {
+      text-align: center;
+      padding: 42px 7vw;
+      color: #8a6f5a;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .engagement-nav { display: block; text-align: center; }
+      .engagement-brand { display: block; margin-bottom: 14px; }
+      .engagement-links { justify-content: center; }
+      .page { padding-top: 44px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-card { min-height: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="engagement-nav">
+    <a href="index.html" class="engagement-brand">Rhoda Jiang</a>
+    <div class="engagement-links">
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+      <a href="research.html">Research</a>
+      <a href="engagement.html" class="active">Engagement</a>
+      <a href="collaboration.html">Collaboration</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">Applied AI · Public-facing prototypes</span>
+      <h1>Engagement</h1>
+      <p>
+        A space for small, applied, and public-facing products that translate research ideas
+        into reflective tools, evaluation frameworks, and accessible experiments.
+      </p>
+      <div class="tags">
+        <span class="tag">Interactive Products</span>
+        <span class="tag">AI Evaluation</span>
+        <span class="tag">Care & Ethics</span>
+        <span class="tag">AI & Culture</span>
+      </div>
+    </section>
+
+    <section class="intro-panel">
+      <p>
+        This page currently focuses on two developed products: one is an interactive reflective app,
+        and the other is a pilot-study product for evaluating AI in care-related contexts.
+      </p>
+      <p>
+        Both projects ask how AI can be designed or assessed without reducing human vulnerability
+        into mere engagement, dependency, or efficiency metrics.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Products</h2>
+        <p>Two concise prototypes: one can be experienced directly, and one introduces a pilot evaluation framework.</p>
+      </div>
+
+      <div class="product-grid">
+        <a class="product-card" href="engagement/shixiang/">
+          <div class="product-visual">
+            <div class="seal">相</div>
+          </div>
+          <div class="product-content">
+            <span class="product-label">Interactive App</span>
+            <h3>识相 ShiXiang</h3>
+            <p>
+              A quiet answer book inspired by the Diamond Sutra. Users ask one question;
+              the app responds with one line, one interpretation, and one reflective question.
+            </p>
+            <ul class="product-list">
+              <li>Does not predict the future.</li>
+              <li>Does not make decisions for the user.</li>
+              <li>Designed against addictive companion-product patterns.</li>
+            </ul>
+            <div class="card-bottom">
+              <span class="soft-button">Open the book →</span>
+              <span>Reflective tool</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="product-card" href="engagement/pilot-study/">
+          <div class="product-visual">
+            <div class="table-icon" aria-hidden="true">
+              <div class="mini-row"><span class="mini-cell"></span><span class="mini-cell"></span><span class="mini-cell"></span></div>
+              <div class="mini-row"><span class="mini-cell"></span><span class="mini-cell"></span><span class="mini-cell"></span></div>
+              <div class="mini-row"><span class="mini-cell"></span><span class="mini-cell"></span><span class="mini-cell"></span></div>
+              <div class="mini-row"><span class="mini-cell"></span><span class="mini-cell"></span><span class="mini-cell"></span></div>
+              <div class="mini-row"><span class="mini-cell"></span><span class="mini-cell"></span><span class="mini-cell"></span></div>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-label">Pilot Study</span>
+            <h3>Trauma-Informed AI Care Evaluation</h3>
+            <p>
+              A one-page pilot-study product that maps trauma-informed care principles to
+              corresponding social work ethical principles for AI evaluation in sensitive care contexts.
+            </p>
+            <ul class="product-list">
+              <li>Focuses on safety, power, and self-worth.</li>
+              <li>Turns ethical principles into scorable evaluation language.</li>
+              <li>Supports safer assessment of AI tools for vulnerable communities.</li>
+            </ul>
+            <div class="card-bottom">
+              <span class="soft-button">View pilot study →</span>
+              <span>Evaluation framework</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="note">
+      <p>
+        More public notes, videos, or collaborations can be added later. For now, this page is intentionally kept small:
+        two products, two clear entry points, and no unnecessary archive clutter.
+      </p>
+    </section>
+  </main>
+
+  <footer class="engagement-footer">
+    &copy; Rhoda Jiang. Engagement archive.
+  </footer>
+</body>
+</html>
