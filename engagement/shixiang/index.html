@@ -377,13 +377,11 @@
       zh: {
         htmlLang: "zh-CN",
         title: "识相",
-        tagline: "问一句。看清楚。轻轻放。",
         back: "← 返回 Engagement",
         count: (n) => `今日余 ${n} 问`,
         prompt: "此刻，你想问什么？",
         placeholder: "例如：我会成功吗？他还爱我吗？我为什么放不下？",
-        hint: "识相不预测未来，只照见你此刻住在哪一相。",
-        ask: "请一句",
+        ask: "照见",
         asked: (q) => `你问：${q}`,
         lensLabel: "此相何解",
         todayLabel: "今日一问",
@@ -407,7 +405,7 @@
         count: (n) => `${n} questions left today`,
         prompt: "What is weighing on your mind?",
         placeholder: "For example: Will I succeed? Why can’t I let go? What am I holding onto?",
-        ask: "Ask the book",
+        ask: "See clearly",
         asked: (q) => `You asked: ${q}`,
         lensLabel: "What this reveals",
         todayLabel: "A question to carry",
@@ -529,14 +527,12 @@
     const elements = {
       backLink: $("backLink"),
       brandTitle: $("brandTitle"),
-      tagline: $("tagline"),
       countPill: $("countPill"),
       notice: $("notice"),
       askPanel: $("askPanel"),
       answerPanel: $("answerPanel"),
       promptText: $("promptText"),
       question: $("question"),
-      hintText: $("hintText"),
       askButton: $("askButton"),
       userQuestion: $("userQuestion"),
       sutraText: $("sutraText"),
@@ -648,11 +644,9 @@ async function askWithAI(q) {
       const t = i18n[lang];
       document.documentElement.lang = t.htmlLang;
       elements.brandTitle.textContent = t.title;
-      elements.tagline.textContent = t.tagline;
       elements.backLink.textContent = t.back;
       elements.promptText.textContent = t.prompt;
       elements.question.placeholder = t.placeholder;
-      elements.hintText.textContent = t.hint;
       elements.askButton.textContent = t.ask;
       elements.lensLabel.textContent = t.lensLabel;
       elements.todayLabel.textContent = t.todayLabel;
