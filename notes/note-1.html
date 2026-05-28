@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What AI Cannot Count — Notes — Rhoda Jiang</title>
+  <meta name="description" content="On collaboration as professional work, and why it disappears from the record." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(234, 208, 207, 0.45), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(185, 199, 214, 0.35), transparent 34%),
+        linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      color: #3f3a37;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    .article-nav {
+      width: 100%;
+      padding: 24px 7vw 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .article-brand {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #4a3b32;
+    }
+
+    .article-nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .article-nav-links a {
+      padding: 8px 18px;
+      border: 1px solid rgba(74, 59, 50, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 250, 242, 0.45);
+      font-size: 0.95rem;
+      color: #4a3b32;
+      transition: all 0.25s ease;
+    }
+
+    .article-nav-links a:hover,
+    .article-nav-links a.active {
+      background: rgba(234, 208, 207, 0.72);
+      color: #7c6878;
+    }
+
+    /* ── Article wrapper ── */
+    .article-wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 7vw 100px;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #8a7a72;
+      margin-bottom: 44px;
+      padding: 7px 14px 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(138, 111, 90, 0.16);
+      background: rgba(255, 250, 242, 0.5);
+      transition: all 0.22s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(234, 208, 207, 0.5);
+      color: #4a3b32;
+    }
+
+    /* ── Article header ── */
+    .article-meta {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .article-category {
+      padding: 5px 13px;
+      border-radius: 999px;
+      background: rgba(185, 199, 214, 0.38);
+      color: #5b5361;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(138, 111, 90, 0.12);
+    }
+
+    .article-date {
+      font-size: 0.88rem;
+      color: #8a7a72;
+    }
+
+    .article-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+      font-weight: normal;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: #4a3b32;
+      margin-bottom: 14px;
+    }
+
+    .article-subtitle {
+      font-size: 1.12rem;
+      color: #7c6878;
+      font-style: italic;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(138, 111, 90, 0.14);
+    }
+
+    /* ── Body text ── */
+    .article-body p {
+      font-size: 1.08rem;
+      color: #4d4642;
+      margin-bottom: 1.6em;
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body em {
+      color: #7c6878;
+      font-style: italic;
+    }
+
+    .article-body strong {
+      color: #4a3b32;
+      font-weight: bold;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      margin: 2em 0;
+      padding: 22px 28px;
+      border-left: 3px solid rgba(185, 199, 214, 0.7);
+      background: rgba(255, 250, 242, 0.62);
+      border-radius: 0 18px 18px 0;
+      font-size: 1.08rem;
+      color: #5b5361;
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    .article-footer {
+      text-align: center;
+      padding: 42px 7vw;
+      color: #8a6f5a;
+      font-size: 0.9rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .article-nav { display: block; text-align: center; }
+      .article-brand { display: block; margin-bottom: 14px; }
+      .article-nav-links { justify-content: center; }
+      .article-wrapper { padding-top: 40px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="article-nav">
+    <a href="../index.html" class="article-brand">Rhoda Jiang</a>
+
+    <div class="article-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../cv.html">CV</a>
+      <a href="../research.html">Research</a>
+      <a href="../engagement.html">Engagement</a>
+      <a href="../notes.html" class="active">Notes</a>
+    </div>
+  </nav>
+
+  <article class="article-wrapper">
+
+    <a href="../notes.html" class="back-link">← Notes</a>
+
+    <header>
+      <div class="article-meta">
+        <span class="article-category">AI · Social Work</span>
+        <span class="article-date">May 2026</span>
+      </div>
+      <h1 class="article-title">What AI Cannot Count: On Collaboration as Professional Work</h1>
+      <p class="article-subtitle">When social workers spend hours coordinating between housing, mental health, and education services, is that coordination itself professional practice — or merely the scaffolding around it?</p>
+    </header>
+
+    <div class="article-body">
+
+      <p>
+        There is a recurring problem in how social work gets described, and it has become more visible in the age of AI-assisted service delivery. When we try to account for what social workers do — in policy documents, in performance metrics, in datasets that train or evaluate AI tools — we tend to reach for what is countable: cases opened, referrals made, assessments completed. What tends to fall out of the frame is the activity that often matters most: the work of navigating fragmented services on behalf of people who cannot easily navigate them alone.
+      </p>
+
+      <p>
+        I encountered this problem first in practice, then again in research. During my time as a frontline social worker and practice supervisor in China, I watched colleagues spend the largest share of their working day not in direct client contact, but in coordination — calling housing officers, translating between bureaucratic systems, building the informal relationships that made formal referrals actually work. This was rarely described as professional practice, either by the workers themselves or by the institutions they reported to. It was treated as the background condition of the work, not the work itself.
+      </p>
+
+      <div class="pull-quote">
+        The most consequential professional activity is often the one that does not appear in any record.
+      </div>
+
+      <p>
+        My scoping review of the literature on social work and youth homelessness in Scotland surfaced the same pattern at a different scale. Across the studies I reviewed, social work was frequently present in service delivery — but its specific contribution was consistently difficult to identify, because it was embedded in multi-agency processes that attributed outcomes to the system rather than to any particular professional role. What social workers contributed, in case after case, was the capacity to hold together a fragmented response. That capacity — relational, organisational, political in the small sense — was rarely named as a distinct professional input.
+      </p>
+
+      <p>
+        This matters for AI evaluation in a specific way. As AI tools are increasingly tested and deployed in social care and welfare contexts, the metrics used to assess them reflect the same visibility problem. Outcome-based evaluation frameworks tend to measure what was produced — a decision, a recommendation, a referral — not the relational and coordinative processes through which a useful outcome became possible. An AI tool could score well against those metrics while missing, or actively undermining, the professional work that makes services usable for the most vulnerable people.
+      </p>
+
+      <p>
+        The argument I want to make is not that collaboration is unmeasurable, but that it has been systematically mismeasured — classified as preparatory or administrative, rather than recognised as the professional intervention it often is. Reframing collaboration as a core social work activity is not just a conceptual correction. It is a precondition for building evaluation frameworks — whether for human practitioners or for AI tools — that are adequate to what social work actually does.
+      </p>
+
+      <p>
+        This is, I think, part of what makes social work irreplaceable as AI reshapes the landscape of care. Not because social workers are warm bodies in a cold system, but because the professional knowledge required to navigate fragmented services on behalf of vulnerable people — to know which call to make, in which order, with which framing — is exactly the kind of contextual, relational, political knowledge that AI systems do not have, and that current evaluation frameworks do not know how to ask for.
+      </p>
+
+    </div>
+
+  </article>
+
+  <footer class="article-footer">
+    &copy; Rhoda Jiang. Notes archive.
+  </footer>
+</body>
+</html>

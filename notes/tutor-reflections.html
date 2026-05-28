@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Year as a Tutor — Notes — Rhoda Jiang</title>
+  <meta name="description" content="Notes on tutoring from a year of facilitating tutorials and marking at the University of Edinburgh." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(234, 208, 207, 0.45), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(185, 199, 214, 0.35), transparent 34%),
+        linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      color: #3f3a37;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .article-nav {
+      width: 100%;
+      padding: 24px 7vw 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .article-brand {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #4a3b32;
+    }
+
+    .article-nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .article-nav-links a {
+      padding: 8px 18px;
+      border: 1px solid rgba(74, 59, 50, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 250, 242, 0.45);
+      font-size: 0.95rem;
+      color: #4a3b32;
+      transition: all 0.25s ease;
+    }
+
+    .article-nav-links a:hover,
+    .article-nav-links a.active {
+      background: rgba(234, 208, 207, 0.72);
+      color: #7c6878;
+    }
+
+    .article-wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 7vw 100px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #8a7a72;
+      margin-bottom: 44px;
+      padding: 7px 14px 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(138, 111, 90, 0.16);
+      background: rgba(255, 250, 242, 0.5);
+      transition: all 0.22s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(234, 208, 207, 0.5);
+      color: #4a3b32;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .article-category {
+      padding: 5px 13px;
+      border-radius: 999px;
+      background: rgba(185, 199, 214, 0.38);
+      color: #5b5361;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(138, 111, 90, 0.12);
+    }
+
+    .article-date {
+      font-size: 0.88rem;
+      color: #8a7a72;
+    }
+
+    .article-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+      font-weight: normal;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: #4a3b32;
+      margin-bottom: 14px;
+    }
+
+    .article-subtitle {
+      font-size: 1.12rem;
+      color: #7c6878;
+      font-style: italic;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(138, 111, 90, 0.14);
+    }
+
+    .article-body p {
+      font-size: 1.06rem;
+      color: #4d4642;
+      margin-bottom: 1.55em;
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 1.55rem;
+      font-weight: normal;
+      color: #4a3b32;
+      margin: 3em 0 0.8em;
+      padding-top: 1.4em;
+      border-top: 1px solid rgba(138, 111, 90, 0.13);
+      letter-spacing: 0.02em;
+    }
+
+    .example {
+      margin: 1.8em 0 2em;
+      padding: 20px 26px;
+      border-left: 3px solid rgba(185, 199, 214, 0.65);
+      background: rgba(255, 250, 242, 0.68);
+      border-radius: 0 18px 18px 0;
+      font-style: italic;
+      font-size: 1.02rem;
+      color: #5b5361;
+      line-height: 1.72;
+    }
+
+    .example p {
+      color: #5b5361 !important;
+      font-style: italic;
+      margin-bottom: 0.8em !important;
+    }
+
+    .example p:last-child { margin-bottom: 0 !important; }
+
+    .part-divider {
+      margin: 3.5em 0 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #a89a92;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+    }
+
+    .part-divider::before,
+    .part-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(138, 111, 90, 0.18);
+    }
+
+    .article-footer {
+      text-align: center;
+      padding: 42px 7vw;
+      color: #8a6f5a;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .article-nav { display: block; text-align: center; }
+      .article-brand { display: block; margin-bottom: 14px; }
+      .article-nav-links { justify-content: center; }
+      .article-wrapper { padding-top: 40px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="article-nav">
+    <a href="../index.html" class="article-brand">Rhoda Jiang</a>
+    <div class="article-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../cv.html">CV</a>
+      <a href="../research.html">Research</a>
+      <a href="../engagement.html">Engagement</a>
+      <a href="../notes.html" class="active">Notes</a>
+    </div>
+  </nav>
+
+  <article class="article-wrapper">
+
+    <a href="../notes.html" class="back-link">← Notes</a>
+
+    <header>
+      <div class="article-meta">
+        <span class="article-category">Teaching · Reflection</span>
+        <span class="article-date">May 2026</span>
+      </div>
+      <h1 class="article-title">A Year as a Tutor: Notes for Future Tutors and Students</h1>
+      <p class="article-subtitle">On facilitation, marking, conflict, and what makes a tutorial worth attending.</p>
+    </header>
+
+    <div class="article-body">
+
+      <p>
+        When I signed my tutoring contract last June, I assumed the role would be
+        relatively straightforward: attend training, prepare materials, run a fifty-minute
+        discussion each week. A supporting act to the main lecture.
+      </p>
+
+      <p>
+        A year later, I understand it differently. Being a tutor involves administrative
+        preparation, classroom facilitation, student support, assessment and feedback,
+        conflict navigation, and a sustained attention to the different cultural and
+        linguistic backgrounds students bring into the room. It is not a peripheral role.
+        It is a complete one.
+      </p>
+
+      <p>
+        These notes are mainly for two groups of people: those who are about to become
+        tutors for the first time, and students who are about to enter tutorials and want
+        to know what that space is actually for.
+      </p>
+
+      <p>
+        The most important thing I learned is this: a good tutorial is not a performance
+        by the tutor. It is a space that tutor and students build together.
+      </p>
+
+
+      <div class="part-divider">Part One · For Future Tutors</div>
+
+
+      <h2>Take the administrative layer seriously</h2>
+
+      <p>
+        The training sessions for new tutors include a lot of procedural content: setting
+        up a staff email account, logging working hours, understanding course timetables
+        and marking arrangements. It can be tempting to treat this as bureaucratic
+        background noise.
+      </p>
+
+      <p>
+        I would encourage you not to. If anything is unclear after training, reach out to
+        the course organiser or the relevant administrator before the course starts.
+        Questions are much easier to address before they become problems.
+      </p>
+
+
+      <h2>The shift from lecturer to facilitator</h2>
+
+      <p>
+        This is the most important thing I have to say: our job as a tutor is not to
+        re-deliver the lecture. It is to create the conditions in which students can engage
+        with the material for themselves.
+      </p>
+
+      <p>
+        I understood this in theory from the start. What changed it was being observed.
+      </p>
+
+      <div class="example">
+        <p>
+          My tutorial was observed by the course organiser midway through the first
+          semester. I had read everything, anticipated the questions students might ask,
+          and built a loose plan for how the discussion might go. When the observation
+          feedback came, the main point was simple: I had been doing most of the talking.
+          Not because the students were disengaged — but because I had left them very
+          little space to speak.
+        </p>
+      </div>
+
+      <p>
+        This was a turning point. I realized I should have been preparing to open them.
+        The value of a tutorial is not in how much the tutor covers. It is in whether
+        students can express their own understanding, hear different perspectives, and
+        leave with something more nuanced than they arrived with. Our role is to make
+        that process possible — not to substitute for it.
+      </p>
+
+
+      <h2>Group dynamics and cultural diversity</h2>
+
+      <p>
+        A tutorial is a group: it has dynamics, power relations, and uneven patterns of
+        participation. Some students speak easily and often. Others rarely do. A good
+        facilitator notices this and works to create more equitable conditions for
+        contribution — pausing before inviting the same voices again, and creating
+        specific openings for quieter students.
+      </p>
+
+      <p>
+        The diversity students bring into the room is also a resource, not a complication.
+      </p>
+
+      <div class="example">
+        <p>
+          A student told me after class that she particularly valued the way discussions
+          invited people to draw on their own national and social contexts. She said that
+          hearing how students from different countries understood the same social problem
+          helped her see that the concept itself was shaped by context — something the
+          lecture had not made available to her.
+        </p>
+      </div>
+
+      <p>
+        When we design discussion questions, it is worth leaving room for students to
+        locate the material in their own experience. The theoretical gains from that kind
+        of discussion are real.
+      </p>
+
+
+      <h2>Marking: understand, document, explain</h2>
+
+      <p>
+        Marking is where a tutor's judgments become consequential in a direct and visible
+        way. Students see their grades; they compare them; they sometimes contest them.
+      </p>
+
+      <p>
+        My approach has three stages: understand the criteria before I begin, keep records
+        as I go, and be prepared to explain my reasoning clearly. The third stage matters
+        more than it might seem.
+      </p>
+
+      <div class="example">
+        <p>
+          A student in my second semester received a deduction for exceeding the word
+          limit. She sent me an email shortly after, explaining that based on her reading
+          of the guidelines, she did not believe she had exceeded it. My first instinct
+          was to reply quickly and defend the mark. Instead, I went back to the course
+          organiser and the relevant academic policy, re-read the word-count rules
+          carefully, and confirmed the basis for the deduction before I responded.
+        </p>
+        <p>
+          In the end, she accepted the outcome. What I noticed was that she had not
+          needed the mark to change — she had needed to know that someone had actually
+          read her work carefully enough to explain why it had been assessed the way
+          it was.
+        </p>
+      </div>
+
+      <p>
+        Marking is a professional act, not a personal one. When it is grounded in clear
+        criteria and documented reasoning, students can trust the process even when they
+        disagree with the result.
+      </p>
+
+
+      <h2>Conflict and escalation</h2>
+
+      <p>
+        Group work generates conflict. This is not a sign that something has gone wrong —
+        it is a predictable feature of asking people who do not know each other well to
+        collaborate on something that will be graded.
+      </p>
+
+      <div class="example">
+        <p>
+          Two students in one of my tutorials had a significant disagreement about their
+          respective contributions to a joint task. Because I saw them each week, I had
+          already developed some impressions about both — impressions I was aware might
+          not be entirely fair or accurate.
+        </p>
+      </div>
+
+      <p>
+        This is important to name honestly: the closeness that makes you useful to
+        students as a tutor can also introduce bias into situations that require impartial
+        judgment. When conflict involves grades or formal processes, the right move is to
+        bring in the course organiser — not because you have failed to handle it, but
+        because the situation calls for a distance you cannot have.
+      </p>
+
+
+      <h2>Setting the space from day one</h2>
+
+      <p>
+        If I were starting again, I would use the first tutorial session to establish,
+        explicitly, what kind of space we are building together. A few minutes at the
+        start, a slide, a short conversation — the content matters more than the format.
+      </p>
+
+      <p>
+        The core of it is: tutorials work when both tutor and students understand it as
+        shared work. We are responsible for facilitating, asking good questions, giving
+        feedback, and treating everyone's contributions with care. Students are responsible
+        for engaging with each other's ideas and taking the collaborative elements of the
+        course seriously — including keeping records of their process when working in groups.
+      </p>
+
+      <p>
+        Documenting the group process — notes from meetings, records of how tasks were
+        divided, a log of contributions — is not a sign of distrust. It is good practice.
+        When disputes arise, as they sometimes do, it protects everyone.
+      </p>
+
+
+      <h2>Understanding before responding</h2>
+
+      <p>
+        I came to tutoring as an international student myself. My first language is not
+        English, and there were moments in the tutorial room — on both sides of the table
+        — where I was aware of the gap between what I wanted to say and what I was able
+        to say quickly enough.
+      </p>
+
+      <div class="example">
+        <p>
+          I remember a moment where I realised I had jumped too quickly to explaining how
+          an argument should be structured, before I had actually understood what the
+          student in front of me was trying to say. I had heard the words. I had not
+          heard the meaning.
+        </p>
+      </div>
+
+      <p>
+        What helped me, and what I would offer as a general principle for anyone in a
+        multilingual academic environment: slow down confirmation. Before responding,
+        check that you have understood. <em>"Can I just check what I heard you saying?"</em>
+        or <em>"So your point is — and tell me if I've got this wrong —"</em> are not
+        signs of uncertainty. They are signs that you are taking the other person seriously.
+      </p>
+
+      <p>
+        Some difficulties in the tutorial room are not about anyone's intelligence or
+        commitment. They are about the time it takes to bridge different assumptions,
+        different languages, and different ways of constructing an argument. The more
+        aware we are of that, the better we can work with it.
+      </p>
+
+
+      <div class="part-divider">Part Two · For Students</div>
+
+
+      <h2>What tutorial is — and isn't</h2>
+
+      <p>
+        Tutorial is not a smaller, more intimate version of the lecture. The lecture
+        transmits; the tutorial processes. If you come expecting the tutor to re-explain
+        what you missed in the reading, you will sometimes get that — but it is not what
+        the space is for.
+      </p>
+
+      <p>
+        What the space is for is thinking out loud, in company. You are not being assessed
+        on whether your contribution is correct. You are being given the opportunity to
+        put your current understanding into words, hear it in contact with other people's
+        understanding, and leave with something more than you arrived with. The degree to
+        which that happens depends, more than many students realise, on you.
+      </p>
+
+
+      <h2>Your background is part of the curriculum</h2>
+
+      <p>
+        The most interesting tutorials I ran were the ones where students drew on their
+        own social contexts. A student describing how housing policy works in their home
+        country. A student noting that the ethical framework we were discussing would be
+        applied very differently under conditions of constrained professional autonomy.
+        A student connecting a theoretical concept to something they had witnessed on
+        placement.
+      </p>
+
+      <p>
+        None of these contributions were marked. All of them changed the room.
+      </p>
+
+      <p>
+        Your social background, your national context, your personal observations — these
+        are not supplementary to the course material. In a field like social work, they
+        often are the course material.
+      </p>
+
+
+      <h2>How to give feedback to your tutor</h2>
+
+      <p>
+        Tutors — especially first-time tutors — are learning as they go. If something is
+        not working for you, the most useful thing you can do is say so, directly and
+        respectfully. This might mean telling your tutor after class that the discussion
+        questions felt too broad, or that you would find it helpful to have more structured
+        small-group time before the open discussion.
+      </p>
+
+      <p>
+        Positive feedback matters as much as critical feedback. Tutors rarely hear what
+        is working.
+      </p>
+
+
+      <div class="part-divider">Closing</div>
+
+
+      <p style="margin-top: 2em;">
+        I have genuinely loved this year. I loved seeing the student list before the first
+        tutorial and not knowing anyone on it. I loved the moment, several weeks in, when
+        I could greet everyone by name. I loved watching students who were quiet in week
+        two say something confident and specific in week ten.
+      </p>
+
+      <p>
+        Tutoring is not easy work. It asks for preparation, judgment, adaptability, and
+        the willingness to sit with uncertainty — both your own and your students'. But
+        it is meaningful work, in the plain sense that it matters what you do and how
+        you do it.
+      </p>
+
+      <p>
+        A tutorial, at its best, is not something a tutor delivers to students. It is
+        something a tutor and students build together. That distinction, which took me
+        most of the year to fully understand, is what I would most want to pass on.
+      </p>
+
+    </div>
+  </article>
+
+  <footer class="article-footer">
+    &copy; Rhoda Jiang. Notes archive.
+  </footer>
+</body>
+</html>
