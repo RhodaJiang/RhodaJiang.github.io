@@ -243,87 +243,87 @@
 		}
 
 		/* Research Progress Poster Gallery */
-.progress-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 26px;
-}
+		.progress-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 26px;
+		}
 
-.progress-card {
-	border-radius: 28px;
-	background: rgba(255, 250, 242, 0.76);
-	border: 1px solid rgba(138, 111, 90, 0.14);
-	box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
-	backdrop-filter: blur(8px);
-	overflow: hidden;
-	transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
+		.progress-card {
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.76);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			overflow: hidden;
+			transition: transform 0.28s ease, box-shadow 0.28s ease;
+		}
 
-.progress-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
-}
+		.progress-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 44px rgba(74, 59, 50, 0.13);
+		}
 
-.poster-link {
-	display: block;
-	background: #fffaf2;
-	cursor: zoom-in;
-}
+		.poster-link {
+			display: block;
+			background: #fffaf2;
+			cursor: zoom-in;
+		}
 
-.progress-image img {
-	width: 100%;
-	height: 380px;
-	object-fit: contain;
-	background: #fffaf2;
-	padding: 12px;
-}
+		.progress-image img {
+			width: 100%;
+			height: 380px;
+			object-fit: contain;
+			background: #fffaf2;
+			padding: 12px;
+		}
 
-.progress-content {
-	padding: 24px;
-}
+		.progress-content {
+			padding: 24px;
+		}
 
-.progress-date {
-	font-size: 0.9rem;
-	color: #8a6f5a;
-	letter-spacing: 0.05em;
-	margin-bottom: 8px;
-}
+		.progress-date {
+			font-size: 0.9rem;
+			color: #8a6f5a;
+			letter-spacing: 0.05em;
+			margin-bottom: 8px;
+		}
 
-.progress-content h3 {
-	font-size: 1.35rem;
-	font-weight: normal;
-	color: #4a3b32;
-	margin-bottom: 10px;
-	text-transform: capitalize;
-}
+		.progress-content h3 {
+			font-size: 1.35rem;
+			font-weight: normal;
+			color: #4a3b32;
+			margin-bottom: 10px;
+			text-transform: capitalize;
+		}
 
-.progress-summary {
-	color: #4d4642;
-	font-size: 0.98rem;
-	margin-bottom: 16px;
-}
+		.progress-summary {
+			color: #4d4642;
+			font-size: 0.98rem;
+			margin-bottom: 16px;
+		}
 
-.poster-meta {
-	padding-top: 16px;
-	border-top: 1px solid rgba(138, 111, 90, 0.16);
-	color: #5f5551;
-	font-size: 0.95rem;
-}
+		.poster-meta {
+			padding-top: 16px;
+			border-top: 1px solid rgba(138, 111, 90, 0.16);
+			color: #5f5551;
+			font-size: 0.95rem;
+		}
 
-.poster-meta p {
-	margin-bottom: 8px;
-}
+		.poster-meta p {
+			margin-bottom: 8px;
+		}
 
-.view-poster {
-	display: inline-block;
-	margin-top: 12px;
-	padding: 8px 15px;
-	border-radius: 999px;
-	background: rgba(216, 167, 167, 0.3);
-	border: 1px solid rgba(138, 111, 90, 0.14);
-	font-size: 0.9rem;
-	color: #4a3b32;
-}
+		.view-poster {
+			display: inline-block;
+			margin-top: 12px;
+			padding: 8px 15px;
+			border-radius: 999px;
+			background: rgba(216, 167, 167, 0.3);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			font-size: 0.9rem;
+			color: #4a3b32;
+		}
 
 		/* Reflection */
 		.ideas-grid {
@@ -364,12 +364,106 @@
 			font-size: 0.82rem;
 		}
 
-		/* Footer */
-		.research-footer {
-			text-align: center;
-			padding: 42px 7vw;
+		/* ── Section 4: Conference Presentation ── */
+		.presentation-layout {
+			display: grid;
+			grid-template-columns: 1fr 1.6fr;
+			gap: 28px;
+			align-items: start;
+		}
+
+		.presentation-info {
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.72);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			padding: 32px;
+		}
+
+		.presentation-info .conf-label {
+			display: inline-block;
+			margin-bottom: 16px;
+			padding: 5px 13px;
+			border-radius: 999px;
+			background: rgba(185, 199, 214, 0.38);
+			color: #5b5361;
+			font-size: 0.82rem;
+			letter-spacing: 0.03em;
+		}
+
+		.presentation-info h3 {
+			font-size: 1.25rem;
+			font-weight: normal;
+			color: #4a3b32;
+			line-height: 1.45;
+			margin-bottom: 22px;
+		}
+
+		.conf-details {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			padding-top: 20px;
+			border-top: 1px solid rgba(138, 111, 90, 0.16);
+		}
+
+		.conf-detail-row {
+			display: grid;
+			grid-template-columns: 80px 1fr;
+			gap: 8px;
+			font-size: 0.95rem;
+		}
+
+		.conf-detail-row .detail-key {
 			color: #8a6f5a;
+			font-size: 0.85rem;
+			padding-top: 2px;
+		}
+
+		.conf-detail-row .detail-val {
+			color: #4d4642;
+		}
+
+		/* Slides embed */
+		.slides-wrap {
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.72);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+			overflow: hidden;
+		}
+
+		.slides-embed-container {
+			position: relative;
+			width: 100%;
+			padding-top: 56.25%; /* 16:9 */
+		}
+
+		.slides-embed-container iframe {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+
+		.slides-overlay {
+			position: absolute;
+			inset: 0;
+			z-index: 2;
+			height: 44px;
+			background: rgba(255, 250, 242, 0.92);
+			pointer-events: all;
+			cursor: default;
+		}
+
+		.slides-caption {
+			padding: 16px 24px 20px;
+			color: #5f5551;
 			font-size: 0.9rem;
+			border-top: 1px solid rgba(138, 111, 90, 0.1);
 		}
 
 		@media (max-width: 900px) {
@@ -393,7 +487,8 @@
 
 			.intro-grid,
 			.progress-grid,
-			.ideas-grid {
+			.ideas-grid,
+			.presentation-layout {
 				grid-template-columns: 1fr;
 			}
 
@@ -405,25 +500,22 @@
 				height: 260px;
 			}
 		}
-		@media (max-width: 900px) {
-		...
-	}
 
-	/* Reflection Long Essays */
-	.reflection-list {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 24px;
-	}
+		/* Reflection Long Essays */
+		.reflection-list {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
 
-	.reflection-essay {
-		padding: 30px;
-		border-radius: 28px;
-		background: rgba(255, 250, 242, 0.76);
-		border: 1px solid rgba(138, 111, 90, 0.14);
-		box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
-		backdrop-filter: blur(8px);
-	}	
+		.reflection-essay {
+			padding: 30px;
+			border-radius: 28px;
+			background: rgba(255, 250, 242, 0.76);
+			border: 1px solid rgba(138, 111, 90, 0.14);
+			box-shadow: 0 14px 36px rgba(74, 59, 50, 0.08);
+			backdrop-filter: blur(8px);
+		}
 	</style>
 </head>
 
@@ -535,88 +627,158 @@
 			</div>
 		</section>
 
-		<div class="progress-grid">
+		<!-- 3. Research Progress Posters -->
+		<section class="research-section" id="progress">
+			<div class="section-heading">
+				<h2>Research Progress</h2>
+				<p>
+					Posters and presentations that document how my research has developed across different stages and events.
+				</p>
+			</div>
 
-<!-- Progress Poster 1 -->
-<article class="progress-card">
-	<div class="progress-image">
-		<a href="images/research/progress-01.png" target="_blank" rel="noopener noreferrer" class="poster-link">
-			<img src="images/research/progress-01.png" alt="Research poster 1">
-		</a>
-	</div>
+			<div class="progress-grid">
 
-	<div class="progress-content">
-		<div class="progress-date">May 14 2025, Edinburgh</div>
-		<h3>Developing The Research Focus</h3>
+				<!-- Progress Poster 1 -->
+				<article class="progress-card">
+					<div class="progress-image">
+						<a href="images/research/progress-01.png" target="_blank" rel="noopener noreferrer" class="poster-link">
+							<img src="images/research/progress-01.png" alt="Research poster 1">
+						</a>
+					</div>
 
-		<div class="poster-meta">
-			<p><strong>Event:</strong> SGSSS Impact Competition</p>
-			<p><strong>Format:</strong> Poster presentation & speech</p>
-			<p><strong>Summary:</strong> This poster explores youth homelessness as a significant social issue in Scotland. It highlights existing evidence showing that institutional support can make a meaningful difference, and considers the role that social work can play in addressing and improving this situation.</p>
+					<div class="progress-content">
+						<div class="progress-date">May 14 2025, Edinburgh</div>
+						<h3>Developing The Research Focus</h3>
 
-			<a href="images/research/progress-01.png" target="_blank" rel="noopener noreferrer" class="view-poster">
-				View Full Poster
-			</a>
-		</div>
-	</div>
-</article>
+						<div class="poster-meta">
+							<p><strong>Event:</strong> SGSSS Impact Competition</p>
+							<p><strong>Format:</strong> Poster presentation &amp; speech</p>
+							<p><strong>Summary:</strong> This poster explores youth homelessness as a significant social issue in Scotland. It highlights existing evidence showing that institutional support can make a meaningful difference, and considers the role that social work can play in addressing and improving this situation.</p>
 
-<!-- Progress Poster 2 -->
-<article class="progress-card">
-	<div class="progress-image">
-		<a href="images/research/progress-02.png" target="_blank" rel="noopener noreferrer" class="poster-link">
-			<img src="images/research/progress-02.png" alt="Research poster 2">
-		</a>
-	</div>
+							<a href="images/research/progress-01.png" target="_blank" rel="noopener noreferrer" class="view-poster">
+								View Full Poster
+							</a>
+						</div>
+					</div>
+				</article>
 
-	<div class="progress-content">
-		<div class="progress-date">October 28 2026, Perth</div>
-		<h3>Connecting with Practitioners and Building Networks</h3>
+				<!-- Progress Poster 2 -->
+				<article class="progress-card">
+					<div class="progress-image">
+						<a href="images/research/progress-02.png" target="_blank" rel="noopener noreferrer" class="poster-link">
+							<img src="images/research/progress-02.png" alt="Research poster 2">
+						</a>
+					</div>
 
-		<div class="poster-meta">
-			<p><strong>Event:</strong> Homeless Network Scotland (HNS) Conference</p>
-			<p><strong>Format:</strong> Poster presentation</p>
-			<p><strong>Summary:</strong> This poster explores the role of social work in youth homelessness based on current literature. It shows that social work is still relatively under-discussed in this area, that collaboration with other professions is often emphasized but rarely examined in depth, and that the topic remains weakly theorised overall.</p>
+					<div class="progress-content">
+						<div class="progress-date">October 28 2026, Perth</div>
+						<h3>Connecting with Practitioners and Building Networks</h3>
 
-			<a href="images/research/progress-02.png" target="_blank" rel="noopener noreferrer" class="view-poster">
-				View Full Poster
-			</a>
-		</div>
-	</div>
-</article>
+						<div class="poster-meta">
+							<p><strong>Event:</strong> Homeless Network Scotland (HNS) Conference</p>
+							<p><strong>Format:</strong> Poster presentation</p>
+							<p><strong>Summary:</strong> This poster explores the role of social work in youth homelessness based on current literature. It shows that social work is still relatively under-discussed in this area, that collaboration with other professions is often emphasized but rarely examined in depth, and that the topic remains weakly theorised overall.</p>
 
-<!-- Progress Poster 3 -->
-<article class="progress-card">
-	<div class="progress-image">
-		<a href="images/research/progress-03.png" target="_blank" rel="noopener noreferrer" class="poster-link">
-			<img src="images/research/progress-03.png" alt="Research poster 3">
-		</a>
-	</div>
+							<a href="images/research/progress-02.png" target="_blank" rel="noopener noreferrer" class="view-poster">
+								View Full Poster
+							</a>
+						</div>
+					</div>
+				</article>
 
-	<div class="progress-content">
-		<div class="progress-date">April 15 2026, Aberdeen</div>
-		<h3>Mapping the Role of Social Work in Youth Homelessness</h3>
+				<!-- Progress Poster 3 -->
+				<article class="progress-card">
+					<div class="progress-image">
+						<a href="images/research/progress-03.png" target="_blank" rel="noopener noreferrer" class="poster-link">
+							<img src="images/research/progress-03.png" alt="Research poster 3">
+						</a>
+					</div>
 
-		<div class="poster-meta">
-			<p><strong>Event:</strong> European Conference for Social Work Research</p>
-			<p><strong>Format:</strong> Poster presentation</p>
-			<p><strong>Summary:</strong> This poster presents findings from a scoping review that systematically mapped the different roles social workers play in youth homelessness services through a synthesis framework. While social work appears to play an important role across services, it is still not clearly identified in the literature. The review also highlights the central role of collaboration in social work practice, and suggests new possibilities for rethinking and theorising collaboration in this field.</p>
+					<div class="progress-content">
+						<div class="progress-date">April 15 2026, Aberdeen</div>
+						<h3>Mapping the Role of Social Work in Youth Homelessness</h3>
 
-			<a href="images/research/progress-03.png" target="_blank" rel="noopener noreferrer" class="view-poster">
-				View Full Poster
-			</a>
-		</div>
-	</div>
-</article>
+						<div class="poster-meta">
+							<p><strong>Event:</strong> European Conference for Social Work Research</p>
+							<p><strong>Format:</strong> Poster presentation</p>
+							<p><strong>Summary:</strong> This poster presents findings from a scoping review that systematically mapped the different roles social workers play in youth homelessness services through a synthesis framework. While social work appears to play an important role across services, it is still not clearly identified in the literature. The review also highlights the central role of collaboration in social work practice, and suggests new possibilities for rethinking and theorising collaboration in this field.</p>
 
-</div>
+							<a href="images/research/progress-03.png" target="_blank" rel="noopener noreferrer" class="view-poster">
+								View Full Poster
+							</a>
+						</div>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- 4. Conference Presentation -->
+		<section class="research-section" id="conference-presentation">
+			<div class="section-heading">
+				<h2>Conference Presentation</h2>
+				<p>
+					A recent paper presentation sharing pilot findings from my PhD research.
+				</p>
+			</div>
+
+			<div class="presentation-layout">
+
+				<!-- Left: info card -->
+				<div class="presentation-info">
+					<span class="conf-label">Paper Presentation</span>
+
+					<h3>Benchmarking LLMs Against Social Work Values: A Trauma-Informed Pilot Study in Youth Homelessness Services</h3>
+
+					<div class="conf-details">
+						<div class="conf-detail-row">
+							<span class="detail-key">Event</span>
+							<span class="detail-val">Social Work Staff and PhD Student Research Conference 2026</span>
+						</div>
+						<div class="conf-detail-row">
+							<span class="detail-key">Date</span>
+							<span class="detail-val">4 June 2026</span>
+						</div>
+						<div class="conf-detail-row">
+							<span class="detail-key">Venue</span>
+							<span class="detail-val">Edinburgh Law School, University of Edinburgh</span>
+						</div>
+						<div class="conf-detail-row">
+							<span class="detail-key">Session</span>
+							<span class="detail-val">Experiencing, Contesting and Countering Trauma</span>
+						</div>
+						<div class="conf-detail-row">
+							<span class="detail-key">Chair</span>
+							<span class="detail-val">Dr Autumn Roesch-Marsh</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Right: slides embed -->
+				<div class="slides-wrap">
+					<div class="slides-embed-container">
+						<iframe
+							src="https://docs.google.com/presentation/d/1WV8ykrMD574p4x5yK3xZjlTjdfpKRxt5/embed?start=false&loop=false&delayms=3000&rm=minimal"
+							allowfullscreen
+							mozallowfullscreen="true"
+							webkitallowfullscreen="true"
+						></iframe>
+						<div class="slides-overlay" aria-hidden="true"></div>
+					</div>
+
+					<div class="slides-caption">
+						Slides are shared for viewing only and cannot be downloaded.
+					</div>
+				</div>
+
+			</div>
+		</section>
 
 	</main>
 
 	<footer class="research-footer">
 		&copy; Rhoda Jiang. Research archive.
 	</footer>
-
 
 </body>
 </html>
