@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I Don't Hate AI Writing, I Hate Losing My Voice to It — Notes — Rhoda Jiang</title>
+  <meta name="description" content="A reflection on AI-assisted expression, second-language communication, and what social work notices that AI optimization tends to erase." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(234, 208, 207, 0.45), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(185, 199, 214, 0.35), transparent 34%),
+        linear-gradient(135deg, #f7efe3 0%, #fffaf2 48%, #e8dde0 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      color: #3f3a37;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .article-nav {
+      width: 100%;
+      padding: 24px 7vw 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .article-brand {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #4a3b32;
+    }
+
+    .article-nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .article-nav-links a {
+      padding: 8px 18px;
+      border: 1px solid rgba(74, 59, 50, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 250, 242, 0.45);
+      font-size: 0.95rem;
+      color: #4a3b32;
+      transition: all 0.25s ease;
+    }
+
+    .article-nav-links a:hover,
+    .article-nav-links a.active {
+      background: rgba(234, 208, 207, 0.72);
+      color: #7c6878;
+    }
+
+    .article-wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 7vw 100px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #8a7a72;
+      margin-bottom: 44px;
+      padding: 7px 14px 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(138, 111, 90, 0.16);
+      background: rgba(255, 250, 242, 0.5);
+      transition: all 0.22s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(234, 208, 207, 0.5);
+      color: #4a3b32;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .article-category {
+      padding: 5px 13px;
+      border-radius: 999px;
+      background: rgba(185, 199, 214, 0.38);
+      color: #5b5361;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(138, 111, 90, 0.12);
+    }
+
+    .article-date {
+      font-size: 0.88rem;
+      color: #8a7a72;
+    }
+
+    .article-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+      font-weight: normal;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: #4a3b32;
+      margin-bottom: 14px;
+    }
+
+    .article-subtitle {
+      font-size: 1.12rem;
+      color: #7c6878;
+      font-style: italic;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(138, 111, 90, 0.14);
+    }
+
+    .article-body p {
+      font-size: 1.06rem;
+      color: #4d4642;
+      margin-bottom: 1.55em;
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 1.55rem;
+      font-weight: normal;
+      color: #4a3b32;
+      margin: 3em 0 0.8em;
+      padding-top: 1.4em;
+      border-top: 1px solid rgba(138, 111, 90, 0.13);
+      letter-spacing: 0.02em;
+    }
+
+    .tight p {
+      margin-bottom: 0.35em;
+    }
+
+    .example {
+      margin: 1.8em 0 2em;
+      padding: 20px 26px;
+      border-left: 3px solid rgba(185, 199, 214, 0.65);
+      background: rgba(255, 250, 242, 0.68);
+      border-radius: 0 18px 18px 0;
+      font-style: italic;
+      font-size: 1.02rem;
+      color: #5b5361;
+      line-height: 1.72;
+    }
+
+    .example p {
+      color: #5b5361 !important;
+      font-style: italic;
+      margin-bottom: 0.8em !important;
+    }
+
+    .example p:last-child { margin-bottom: 0 !important; }
+
+    .part-divider {
+      margin: 3.5em 0 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #a89a92;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+    }
+
+    .part-divider::before,
+    .part-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(138, 111, 90, 0.18);
+    }
+
+    .article-footer {
+      text-align: center;
+      padding: 42px 7vw;
+      color: #8a6f5a;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .article-nav { display: block; text-align: center; }
+      .article-brand { display: block; margin-bottom: 14px; }
+      .article-nav-links { justify-content: center; }
+      .article-wrapper { padding-top: 40px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="article-nav">
+    <a href="../index.html" class="article-brand">Rhoda Jiang</a>
+    <div class="article-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../cv.html">CV</a>
+      <a href="../research.html">Research</a>
+      <a href="../engagement.html">Engagement</a>
+      <a href="../notes.html" class="active">Notes</a>
+    </div>
+  </nav>
+
+  <article class="article-wrapper">
+
+    <a href="../notes.html" class="back-link">← Notes</a>
+
+    <header>
+      <div class="article-meta">
+        <span class="article-category">AI · Social Work · Reflection</span>
+        <span class="article-date">July 2026</span>
+      </div>
+      <h1 class="article-title">I Don't Hate AI Writing, I Hate Losing My Voice to It</h1>
+      <p class="article-subtitle">On second-language expression, AI-assisted communication, and what social work calls the right to self-determination.</p>
+    </header>
+
+    <div class="article-body">
+
+      <p>
+        This is my fourth year using large language models a lot. Lately, I've noticed
+        something: I lose patience with AI-generated text very quickly. I skim through it
+        fast, and I'm often not satisfied with what it gives me.
+      </p>
+
+      <p>
+        At first, I thought this impatience was just because AI content feels repetitive,
+        or too safe and balanced. But recently, while using AI to polish my English, my
+        second language, I realized something different. What bothers me is not that AI
+        writes badly. It's that sometimes it writes too well.
+      </p>
+
+      <p>
+        By "well", I mean fluent, complete, and polite — like someone who always knows the
+        right way to communicate. But that's not how people really talk in real
+        relationships.
+      </p>
+
+      <div class="tight">
+        <p>Real people hesitate.</p>
+        <p>They repeat themselves.</p>
+        <p>They make grammar mistakes.</p>
+        <p>Their emotions matter more than their logic sometimes.</p>
+      </div>
+
+      <p>Here is what happened.</p>
+
+      <div class="example">
+        <p>
+          One day, I needed to explain a difficult situation to someone who speaks English
+          natively. I had so much to say, and it felt hard to organize, so I talked to AI
+          first and asked it to turn my thoughts into four or five clear sentences. When I
+          read the result, it felt complete. So I sent it. But something I didn't expect
+          happened: the other person understood the content, but felt very disappointed —
+          because my words sounded like I was cold, rational, withdrawing from them.
+        </p>
+        <p>
+          I was confused. My intention with this self-disclosure was to help the other
+          person understand me better, so they could make the right decision — not to
+          make them think I was pulling away, or to cause them emotional pain. So while I
+          was reading their message, I started crying. I am a very emotional person — my
+          feelings show easily on my face. When they tried to call me, I said I was crying
+          and couldn't talk right now. I explained that I wasn't losing control, I was
+          just expressing my emotions in my own way. I also told them I never meant to
+          make them sad.
+        </p>
+        <p>
+          Looking back, that message I typed in the moment wasn't "polished". Some parts
+          weren't natural, and there were grammar mistakes. But it sounded like me. It
+          kept my confusion, the traces of my second language, my emotions in the moment —
+          and the clumsy effort of me trying to explain myself to someone else. In the
+          end, the other person understood what I meant, and the conversation continued.
+        </p>
+      </div>
+
+      <p>
+        So when I looked again at those four or five AI-generated sentences, they were
+        complete, clear, and polite. They described my situation well, balanced the
+        cultural differences, and even included an apology and some understanding of the
+        relationship. But reading them again, I felt strong impatience. Because that
+        message sounded like a relationship manual — not like something a real person,
+        confused and overwhelmed under pressure, would actually say.
+      </p>
+
+      <p>
+        That's when I understood what really bothers me: AI's optimization might be
+        quietly taking over what I call my "right to express myself". It doesn't just make
+        my English smoother. It might also be deciding, without me realizing it, what kind
+        of emotional expression counts as "mature", what kind of vulnerability counts as
+        "appropriate" — and what version of me is allowed to be seen.
+      </p>
+
+      <p>
+        And this is exactly what social work cares about. Social work values human
+        dignity, self-determination, diversity, and connection.
+      </p>
+
+
+      <h2>What social work notices</h2>
+
+      <p>
+        Dignity means my imperfect language still has value. It shouldn't be reduced to
+        one "correct" answer.
+      </p>
+
+      <p>
+        Self-determination means I have the right to decide how I express my emotions, not
+        AI.
+      </p>
+
+      <p>
+        Diversity means the imperfections of a second language, the hesitations from
+        cultural differences, and different ways of expressing emotion are all part of
+        being human.
+      </p>
+
+      <p>
+        Connection means that words in a relationship aren't only there to sound mature or
+        appropriate. They exist so the other person can see the real me.
+      </p>
+
+      <p>
+        What worries me most about AI-generated content is this: it can compress the
+        complexity of being human into standardized expression. It can turn real emotion
+        into "appropriate" scripts. It can rewrite the uncertainty and vulnerability in
+        relationships into something that looks like a perfect way to communicate.
+      </p>
+
+      <p>
+        So I don't want to reject AI. I want to set boundaries for it. Let it help me
+        polish my sentences — but not replace my own voice. Let it fix my grammar — but
+        not decide what my emotions should look like. AI should not get to decide who I
+        am, how I feel, or how I choose to express myself.
+      </p>
+
+      <p>
+        I hope more people bring a social work perspective into conversations about AI.
+        When a technology this powerful enters our daily lives, it shouldn't only be
+        discussed in technical terms. We also need to look at it through the lens of
+        humanity — the boundary between humans and machines. How does AI change the way we
+        understand ourselves, express ourselves, and build relationships with others?
+      </p>
+
+      <p>
+        Responsible use of AI isn't about chasing endless fluency or efficiency. It's
+        about keeping the person at the center. Crying, pausing, clumsy words, grammar
+        mistakes, imperfect expression — these are not always problems that need fixing.
+        Sometimes, they are proof that a real person is still there. As AI changes our
+        world so quickly, we still need to hold on to our human agency.
+      </p>
+
+    </div>
+  </article>
+
+  <footer class="article-footer">
+    &copy; Rhoda Jiang. Notes archive.
+  </footer>
+</body>
+</html>
